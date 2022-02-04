@@ -11,17 +11,28 @@ namespace Dungeon
         static void Main(string[] args)
         {
             Console.Title = "DUNGEON SOULS";
-            Console.WriteLine("In the Age of Ancients the world was unformed, shrouded by fog. " +
+
+            Console.WriteLine("DUNGEON SOULS");
+
+            Console.WriteLine("\n\nIn the Age of Ancients the world was unformed, shrouded by fog... " +
                 "\nA land of gray crags, Archtrees and Everlasting Dragons. " +
-                "\nBut then there was Fire and with fire came disparity. " +
-                "\nHeat and cold, " +
-                "\nlife and death, " +
-                "\nand of course, light and dark. " +
-                "\nThen from the dark, They came, and found the Souls of Lords within the flame. " +
+                "\n\nBut then there was Fire and with fire came disparity. " +
+                "\n\nHeat and cold, " +
+                "\n\nlife and death, " +
+                "\n\nand of course, light and dark. \n"); 
+                
+                Console.WriteLine(
+                "\n...from the dark, They came, and found the Souls of Lords within the flame. " +
                 "\n\nNito, the First of the Dead, " +
-                "\nThe Witch of Izalith and her Daughters of Chaos, " +
-                "\nGwyn, the Lord of Sunlight, and his faithful knights. " +
-                "\nAnd the Furtive Pygmy, so easily forgotten.");
+                "\n\nThe Witch of Izalith and her Daughters of Chaos, " +
+                "\n\nGwyn, the Lord of Sunlight, and his faithful knights. " +
+                "\n\nAnd the Furtive Pygmy, so easily forgotten....");
+            Console.WriteLine("\n\n");
+            Console.Read();
+            
+
+
+            Console.WriteLine("Your journey begins here...In a dungeon cell\n\n\n");
         }
     }
 }

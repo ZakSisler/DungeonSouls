@@ -9,7 +9,7 @@ namespace Dungeon
 
     public sealed class Heroes : CharacterBase
     {
-        //NAMES:
+        //NAME IDEAS:
         //Blaise Pascal - Strongest atk, medium speed, lowest health
 
         //Joe Smoke - Camel race, Super fast, weakest atk, medium health

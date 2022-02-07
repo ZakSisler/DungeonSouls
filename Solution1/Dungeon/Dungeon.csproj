@@ -49,7 +49,7 @@
     <Compile Include="1_CharacterBase.cs" />
     <Compile Include="DungeonSouls.cs" />
     <Compile Include="3_Monsters.cs" />
-    <Compile Include="2_Heros.cs" />
+    <Compile Include="2_Heroes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

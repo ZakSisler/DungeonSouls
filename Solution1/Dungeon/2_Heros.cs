@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Dungeon
 {
 
-    public sealed class Heros : CharacterBase
+    public sealed class Heroes : CharacterBase
     {
         //NAMES:
         //Blaise Pascal - Strongest atk, medium speed, lowest health
@@ -42,7 +42,7 @@ namespace Dungeon
         }
 
         //Constructors
-        public Heros(string name, int life, int maxLife, int hitChance, int minDamage, int maxDamage, string description)
+        public Heroes(string name, int life, int maxLife, int hitChance, int minDamage, int maxDamage, string description)
         //: base(name, maxLife, life, hitChance, block)
         {
             //Monster inherits from the abstract class (Character) it has no constructor to inherit from. We never inherit the constructor but we are able to use the : base(params) shortcut for automatic assignment of any inherited properties. Since the character has no constructor it also does nothing for assignment of its porperties. When inheriting from an abstract but we will still need to manually perform assignment for all properties and methods, but we still need to manually perform the assignment for all properties in the CTOR.
@@ -57,7 +57,7 @@ namespace Dungeon
             Description = description;
         }
 
-        public Heros() { }
+        public Heroes() { }
 
         //Methods
         public override string ToString()

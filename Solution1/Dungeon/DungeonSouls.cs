@@ -14,12 +14,21 @@ namespace Dungeon
 
             Console.WriteLine("DUNGEON SOULS");
 
-
+            //Heroes made here (Perhaps they should be made in heroes.cs and called here?)
             Heroes hero = new Heroes("Blaise Pascal", 50, 50, 50, 20, 75, "Average build, Reliable, Makes wagers");
+
+
+
+            //bools to end do while loops here
             bool intro = false;
             bool exitGame = false;
-            do
+            bool doorOneOpened = false;
+
+
+            //if "exitGame" boolean returns false, then run this code. Otherwise: Game Over. 
+            do 
             {
+                //if "intro && exitGame" booleans returns false, then run this code. Otherwise: Game Restart
                 do
                 {
 
@@ -32,16 +41,17 @@ namespace Dungeon
 
 
                     //User is prompted; Only one Path 
-                    Console.WriteLine("What do you do next?: (Press the key related to your decision)\n\n" +
-                        "F) You quickly feel around for the item on the ground.\n" +
+                    Console.WriteLine("What do you do next?: \n\n" +
+                        "F) You quickly feel around for the item on the ground, avoiding any rats. \n(By the look of them they look unusually large and particularly ferocious...)\n" +
                         "R) You chase the rats... You are hungry after all...\n" +
                         "X) Exit Game");
 
-                    Console.WriteLine("\n");
+                    Console.WriteLine("\nPlease press the key of your choice");
                     ConsoleKey userChoice = Console.ReadKey(true).Key;
 
                     Console.Clear();
 
+                    //Switch for user selection
                     switch (userChoice)
                     {
 
@@ -57,17 +67,19 @@ namespace Dungeon
                             }
                             else
                             {
-                                exitGame = true;
+                                exitGame = true; //TODO (Not sure if needed here, further testing needed)
                                 intro = true;
+                                doorOneOpened = true;
                             }
                             break;
 
 
-                            //This choice quickly ends the game and restarts the game; Helping the user understand the consequences of the game early on.
+                            //This choice quickly ends the game and restarts the game; Helping the user understand the consequences of the game early on. Dungeon Souls will kick you out with no mercy.
                         case ConsoleKey.R:
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("You hastily chase the rats... annnnd to your horror are quickly swarmed and they devour you... \nYOU DIED");
                             Console.ResetColor();
+                            exitGame = true;
                             intro = true;
                             break;
 
@@ -75,14 +87,14 @@ namespace Dungeon
                         case ConsoleKey.X:
                         case ConsoleKey.E:
                             Console.WriteLine("\nYOU DIED (The only way to exit...)");
-                            intro = true;
+                            //intro = true;
                             break;
                         default:
                             Console.WriteLine("Git gud. Wrong input selected.");
                             break;
                     }
 
-                    bool doorOneOpened = false;
+
 
                     do
                     {
@@ -91,12 +103,13 @@ namespace Dungeon
                         //Console.WriteLine(GetRoom());///////Remove double slash (comment out when room code is fixed)
                         break;
 
+                    } while (!intro && doorOneOpened);
 
 
-                    } while (!doorOneOpened);
+            } while (!exitGame);
                    
-                    
-                    //get this code to execute at the end of every game
+                
+                //get this code to execute at the end of every game
                     Console.WriteLine("play again?\n\ntype \"yes\" or \"no\"");
                     string playagain = Console.ReadLine().ToLower();
                     if (playagain == "yes")
@@ -112,12 +125,6 @@ namespace Dungeon
                         continue;
                     }
                 } while (!intro && !exitGame);
-
-
-
-
-
-            } while (!exitGame);
 
 
         }//End main

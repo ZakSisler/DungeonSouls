@@ -8,6 +8,17 @@ namespace Dungeon
 {
     public sealed class Monsters : CharacterBase
     {
+        //Monster Ideas:
+
+        //A small baby (baby)   - rock
+        //Sorceror Kahn (troll) - paper
+        //Kafka Bug (bug)       - scissors
+
+        //RPS will add a (positive/neutral/negative) multiplier respectively
+
+
+
+
         //Fields
         private int _minDamage;
 
@@ -61,7 +72,7 @@ namespace Dungeon
         public override string ToString()
         {
             //return base.ToString();
-            return string.Format("\n@#$%@#$% MONSTER @#$%@#$%@$%\n" +
+            return string.Format("\n------- MONSTER -------\n" +
                 "{0}\nLife: {1} of {2}\nDamage: {3} to {4}\nDescription: {6}\n",
                 Name,
                 Life,

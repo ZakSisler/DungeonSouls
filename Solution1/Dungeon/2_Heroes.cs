@@ -10,11 +10,12 @@ namespace Dungeon
     public sealed class Heroes : CharacterBase
     {
         //NAME IDEAS:
-        //Blaise Pascal - Strongest atk, medium speed, lowest health
 
-        //Joe Smoke - Camel race, Super fast, weakest atk, medium health
+        //Blaise Pascal (human)              - rock
+        //Joe Smoke (camel)                  - paper
+        //Lezinski the Hungarian (barbarian) - scissors
 
-        //Brutus Enduser - High health, medium atk, lowest speed
+            //RPS will add a (positive/neutral/negative) multiplier respectively
 
         //Fields
         private int _minDamage;
@@ -63,7 +64,7 @@ namespace Dungeon
         public override string ToString()
         {
             //return base.ToString();
-            return string.Format("\n@#$%@#$% HEROES @#$%@#$%@$%\n" +
+            return string.Format("\n------- HEROES -------\n" +
                 "{0}\nLife: {1} of {2}\nDamage: {3} to {4}\nDescription: {6}\n",
                 Name,
                 Life,

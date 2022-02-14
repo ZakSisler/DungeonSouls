@@ -14,19 +14,18 @@ namespace Dungeon
 
             Console.WriteLine("DUNGEON SOULS");
 
-            
 
-
-
-            //bools to end do while loops here
-            bool intro = false;
+            //bool to end do while loops here
             bool exitGame = false;
-            bool doorOneOpened = false;
+            bool intro = false;
 
 
             //if "exitGame" boolean returns false, then run this code. Otherwise: Game Over. 
-            do 
+            do
             {
+                bool doorOneOpened = false;
+
+
                 //if "intro && exitGame" booleans returns false, then run this code. Otherwise: Game Restart
                 do
                 {
@@ -37,8 +36,8 @@ namespace Dungeon
                     Console.WriteLine("\n\nPress any key to continue..."); Console.ReadLine(); Console.Clear();
 
                     Console.WriteLine("\n\n" +
-                       "You can barely see, but you can tell your are in a cold damp room made of stone. \n" +
-                       "As your eyes adjust, you hear a small *clink* on the floor nearby, \naccompanied by the sound of rats\nchattering and scurrying away; they look unusually large and particularly ferocious... ");
+                       "You can barely see, but as your eyes adjust you can tell your are in a cold damp room made of stone. \n" +
+                       "You hear a small *clink* on the floor nearby, \naccompanied by the sound of rats chattering and scurrying away; they look unusually large and particularly ferocious... ");
                     Console.WriteLine("\n\nPress any key to continue..."); Console.ReadLine(); Console.Clear();
 
                     Console.WriteLine("\n Above, a shadowy figure lingers for a moment and then quickly disappears. \n" +
@@ -73,7 +72,7 @@ namespace Dungeon
                             {
                                 intro = true;
                                 doorOneOpened = true;
-                                
+
                             }
                             else
                             {
@@ -83,8 +82,13 @@ namespace Dungeon
                                 string playagain = Console.ReadLine().ToLower();
                                 if (playagain == "yes")
                                 {
-                                    Console.WriteLine("new game");
+                                    //Needs to restart game from the beginning.
                                     intro = false;
+                                    exitGame = false;
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    Console.WriteLine("New Game Reloaded\n\n");
+                                    Console.ResetColor();
+                                    break;
                                 }
                                 else
                                 {
@@ -97,7 +101,7 @@ namespace Dungeon
                             break;
 
 
-                            //This choice quickly ends the game and restarts the game; Helping the user understand the consequences of the game early on. Dungeon Souls will kick you out with no mercy.
+                        //This choice quickly ends the game and restarts the game; Helping the user understand the consequences of the game early on. Dungeon Souls will kick you out with no mercy.
                         case ConsoleKey.R:
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("You hastily chase the rats... \nto your horror you are quickly swarmed by thousands of plague infested, mutated rats and they devour you... \nYOU DIED");
@@ -106,7 +110,7 @@ namespace Dungeon
                             intro = true;
                             continue;
 
-                            //Game Exit
+                        //Game Exit
                         case ConsoleKey.X:
                         case ConsoleKey.E:
                             Console.ForegroundColor = ConsoleColor.Red;
@@ -121,65 +125,32 @@ namespace Dungeon
                             Console.ResetColor();
                             break;
                     }
-                    break;
-
-                    //Implement second portion of the game after opening the door with the key found.
-                    //do
-                    //{
-                    //    Console.WriteLine("You found a door! You slowly open it.\n\n" +
-                    //        "You find yourself in a room with 7 doors");
-                    //    //Console.WriteLine(GetRoom());///////Remove double slash (comment out when room code is fixed)
-                    //    break;
-
-                    //} while (!doorOneOpened);
 
 
-            } while (!exitGame);
-                   
-                
-                } while (!intro && !exitGame);
-                //get this code to execute at the end of every game
-
-                    Console.WriteLine("\n\nWant play again?\n\ntype \"yes\" or \"no\"");
-                    string playagainFinal = Console.ReadLine().ToLower();
-                    if (playagainFinal == "yes")
+                    ////////////////////////////Actual Game begins//////////////////////////////////////////////////////////////////////////
+                    while (doorOneOpened)
                     {
-                        Console.WriteLine("new game");
-                        intro = false;
-                    }
-                    else
-                    {
-                        Console.WriteLine("thanks for playing!");
-                        intro = true;
-                        exitGame = true;
-                        //continue;
-                    }
+                        Console.WriteLine("You found a door! you slowly open it.\n\nYou now find yourself in a room with a large hole in the wall with wreckage and debris strewn about. \n" +
+                            "before you can get your wits about you a purple parrot haphazardly flies by squawking loudly and obnoxiously" +
+                            "/n/nParrot: WHO ARE YOU?!");
+
+                        //Hero will be selected here:
+                        //Pop up a menu with selections of heros.
+                        //Once selected have hero select between 3 doors.
+                        //Rock paper Scissors mechanics will apply bonuses depending on the hero/enemy chosen.
+                        //Have the enemies randomly picked once door is chosen so the player can never memorize the doors.
+                        //Initiate combat, keep track of score, have menu option for character info, declare winner
+                        //Player should be able to exit any time.
 
 
+
+                    }
+                    break;//??
+
+                } while (!exitGame);
+
+            } while (!intro && !exitGame);
+            
         }//End main
-
-
-        //Room randomizer made here
-        private static string GetRoom()
-        {
-            string[] rooms =
-                {
-                    "EMERALD ROOM",//Create rooms that randomly assigns different monsters into them when selected.
-                    "PEARL ROOM",
-                    "RUBY ROOM",
-                    "TOPAZ ROOM",
-                    "OBSIDIAN ROOM",
-                    "CRYSTAL ROOM",
-                };
-
-            Random randomRoom = new Random();
-
-            int indexNbr = randomRoom.Next(rooms.Length);
-
-            string room = rooms[indexNbr];
-
-            return room;
-
-        }
     }
 }

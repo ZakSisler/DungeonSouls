@@ -12,7 +12,7 @@ namespace Monster_Library
         //Fields
 
         //Properties
-        public bool IsPaper { get; set; }??
+        public bool IsPaper { get; set; }
 
         //Constructors
         public SorcerorKahn(string name, int life, string description)

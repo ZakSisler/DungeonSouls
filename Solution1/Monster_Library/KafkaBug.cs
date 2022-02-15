@@ -12,7 +12,7 @@ namespace Monster_Library
         //Fields
 
         //Properties
-        public bool IsScissors { get; set; }??
+        public bool IsScissors { get; set; }
 
         //Constructors
         public KafkaBug(string name, int life, string description)

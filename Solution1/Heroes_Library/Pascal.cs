@@ -10,11 +10,22 @@ namespace Heroes_Library
     public class Pascal : Heroes
     {
         //Fields
+        private bool isRock;
+        private static Heroes heroName;
 
         //Properties
         public bool IsRock { get; set; }
 
         //Constructors
+        public Pascal(string name, int life, int maxLife, string description, bool IsRock)
+            : base (heroName, life, maxLife, description)
+        {
+            IsRock = isRock;
+        }
+
+        public Pascal()
+        {
+        }
 
         //Methods
 

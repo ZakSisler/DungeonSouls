@@ -16,9 +16,9 @@ namespace Dungeon
 
             Console.WriteLine("DUNGEON SOULS");
 
-            Heroes player1 = new Heroes(new Pascal(), 1, "Rock type; Makes wagers");
-            Heroes player2 = new Heroes(new JoeSmoke(), 1, "Paper type; Makes wagers");
-            Heroes player3 = new Heroes(new Leszynski(), 1, "Scissors type; Makes wagers");
+            Heroes player1 = new Heroes(new Pascal().HeroName, 1, 3, "Rock type; Makes wagers");
+            Heroes player2 = new Heroes(new JoeSmoke(), 1, 3, "Paper type; Makes wagers");
+            Heroes player3 = new Heroes(new Leszynski(), 1, 3, "Scissors type; Makes wagers");
 
             
 
@@ -166,7 +166,7 @@ namespace Dungeon
                                 character = player1;
                              break;
                             case ConsoleKey.J:
-                                Console.WriteLine("Joe Smoke, eh?");
+                                Console.WriteLine("Joe Smoke, a talking camel eh?");
                                 character = player2;
                                 break;
                             case ConsoleKey.L:
@@ -179,26 +179,66 @@ namespace Dungeon
                                 break;
                         }
 
-                        Console.WriteLine("Well, "+character.Name+" you wanna get outta here?");
+                        Console.WriteLine("Well, "+character.Name+" you wanna get outta here?");//solve this name issue
+                        Console.WriteLine("Before you can answer, the parrot flies out of the room, through the hole in the wall. You see a swarm of bloodthirsty rats behind you and quickly decide to follow the bird. \n\nBefore you there are three doors with colors you've never layed eyes on, their beauty unparalleled. \n\nParrot: ARE YOU GONNA LOOK AT THEM ALL DAY OR WHAT? Pick a door and let's get outta here!!");
 
+                        Console.Write("\nPlease choose a door number:\n" +
+                       "1) The oaky, light salmon colored door\n" +//color code it?
+                       "2) The bright, lemon chiffon colored door\n" +
+                       "3) The dilapidated, magenta and cyan colored door\n");
+
+                        ConsoleKey charDoor = Console.ReadKey(true).Key;
+                        //Executes on input without having to hit "Enter"
+
+                        //Clear Console
+                        Console.Clear();
+                        //string character = "";
+                       
+                        switch (charDoor)
+                        {
+                            //TODO fix this switch for door selection / monster randomization
+                            case ConsoleKey.D1:
+                                Console.WriteLine("Inside the first door you see a formidable foe...");
+                                //Combat initiated here
+                                //Score tallied
+                                //Game win/lose determined
+                                break;
+                            case ConsoleKey.D2:
+                                Console.WriteLine("Inside the second door you see a ferocious beast...");
+                                //Combat initiated here
+                                //Score tallied
+                                //Game win/lose determined
+                                break;
+                            case ConsoleKey.D3:
+                                Console.WriteLine("Inside the third door you see a fiend unimaginable...");
+                                //Combat initiated here
+                                //Score tallied
+                                //Game win/lose determined
+                                break;
+
+                            default:
+                                Console.WriteLine("That's not a door? What are you doing over there?");
+                                break;
+                        }
+
+                        //TODO Play again y/n added here
 
                         break;
                         
 
 
 
-                        //Hero will be selected here:
-                        //Pop up a menu with selections of heros.
-                        //Once selected have hero select between 3 doors.
-                        //Rock paper Scissors mechanics will apply bonuses depending on the hero/enemy chosen.
+                        //TODO - *** Jump Here ***
+                        //Rock paper Scissors mechanics will eventually apply bonuses depending on the hero/enemy chosen.
+                        //Normal mechanics can be applied after mvp is reached to go along with RPS mechanics.
                         //Have the enemies randomly picked once door is chosen so the player can never memorize the doors.
-                        //Initiate combat, keep track of score, have menu option for character info, declare winner
+                        //Initiate combat, keep track of score, have menu option for character info, declare winner/loser
                         //Player should be able to exit any time.
 
 
 
                     }
-                        break;//??Put inside while loop above to restart game; otherwise exit game.
+                        break;
 
                 } while (!intro && !exitGame);
 

@@ -18,10 +18,7 @@ namespace Monster_Library
         public SmallBaby(string name, int life, string description)
            : base(name, life, description) { }
 
-        //public SmallBaby()  Make small baby op?
-        //{
-
-        //}
+        public SmallBaby() { }
 
         //Methods
     }

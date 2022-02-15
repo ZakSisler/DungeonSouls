@@ -31,7 +31,7 @@ namespace Dungeon_Library
 
         //public int MaxLife { get; set; }
 
-        
+
         //public int MaxDamage { get; set; }
         public string Description { get; set; }
         //public int MinDamage
@@ -81,12 +81,5 @@ namespace Dungeon_Library
                 Description);
         }
 
-        //public override int GetCalcDamage()
-        //{
-
-        //    Random rand = new Random();
-
-        //    return rand.Next(MinDamage, MaxDamage + 1);
-        //}
     }
 }

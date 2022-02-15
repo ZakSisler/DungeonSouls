@@ -19,5 +19,6 @@ namespace Monster_Library
            : base(name, life, description) { }
 
         //Methods
+        public KafkaBug() { }
     }
 }

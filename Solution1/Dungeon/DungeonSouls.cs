@@ -16,9 +16,9 @@ namespace Dungeon
 
             Console.WriteLine("DUNGEON SOULS");
 
-            Heroes player1 = new Heroes(new Pascal().HeroName, 1, 3, "Rock type; Makes wagers");
-            Heroes player2 = new Heroes(new JoeSmoke(), 1, 3, "Paper type; Makes wagers");
-            Heroes player3 = new Heroes(new Leszynski(), 1, 3, "Scissors type; Makes wagers");
+            Heroes player1 = new Heroes(new Pascal().HeroName, 3, 3, "Rock type; Makes wagers");
+            Heroes player2 = new Heroes(new JoeSmoke().HeroName, 3, 3, "Paper type; a cool camel");
+            Heroes player3 = new Heroes(new Leszynski().HeroName, 3, 3, "Scissors type; Hungarian Barbarian");
 
             
 
@@ -192,15 +192,22 @@ namespace Dungeon
 
                         //Clear Console
                         Console.Clear();
-                        //string character = "";
-                       
+                        
+                        //Score declared and initialized.
+                        int score = 0;
+
                         switch (charDoor)
                         {
                             //TODO fix this switch for door selection / monster randomization
                             case ConsoleKey.D1:
                                 Console.WriteLine("Inside the first door you see a formidable foe...");
                                 //Combat initiated here
+                                
+
+
+
                                 //Score tallied
+                                score++;
                                 //Game win/lose determined
                                 break;
                             case ConsoleKey.D2:

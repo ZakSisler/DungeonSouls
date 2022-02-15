@@ -21,9 +21,7 @@ namespace Dungeon_Library
         //private int _minDamage;
 
         //Properties
-        //None
-
-
+       
         //public int MaxDamage { get; set; }
         public Heroes HeroName { get; set; }
         public string Description { get; set; }

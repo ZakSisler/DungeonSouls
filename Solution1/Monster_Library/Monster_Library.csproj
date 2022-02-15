@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4875A371-5161-4FA8-B6F5-938F7FAEC17A}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Dungeon</RootNamespace>
-    <AssemblyName>Dungeon</AssemblyName>
+    <ProjectGuid>{A8F91D44-BBFF-452C-8E3D-DA0879BB5E68}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Monster_Library</RootNamespace>
+    <AssemblyName>Monster_Library</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,16 +23,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>Dungeon.DungeonSouls</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,25 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="tester.cs" />
-    <Compile Include="DungeonSouls.cs" />
+    <Compile Include="KafkaBug.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
+    <Compile Include="SmallBaby.cs" />
+    <Compile Include="SorcerorKahn.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dungeon Library\Dungeon Library.csproj">
       <Project>{b86820c4-a152-4649-9b9f-c6e0b99b5cb2}</Project>
       <Name>Dungeon Library</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Heroes_Library\Heroes_Library.csproj">
-      <Project>{6d28c3ba-dac7-43de-be41-2dcf9adf6b50}</Project>
-      <Name>Heroes_Library</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Monster_Library\Monster_Library.csproj">
-      <Project>{a8f91d44-bbff-452c-8e3d-da0879bb5e68}</Project>
-      <Name>Monster_Library</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

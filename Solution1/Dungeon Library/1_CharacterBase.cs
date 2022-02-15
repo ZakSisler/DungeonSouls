@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dungeon
+namespace Dungeon_Library
 {
     public abstract class CharacterBase
     {
@@ -14,7 +14,7 @@ namespace Dungeon
         //Properties
         public string Name { get; set; }
 
-        public int HitChance { get; set; }
+        //public int HitChance { get; set; }
 
         public int MaxLife { get; set; }
 
@@ -51,16 +51,16 @@ namespace Dungeon
         //MINILAB
         //Calchitchance
 
-        public virtual int CalcHitChance()
-        {
-            return HitChance;
-        }
+        //public virtual int CalcHitChance()
+        //{
+        //    return HitChance;
+        //}
 
-        public virtual int CalcDamage()
-        {
-            return 0;
-            //Starting with return 0. We will override this method for monster and player so they have their own unique ways to calculate the damage they deal.
-        }
+        //public virtual int CalcDamage()
+        //{
+        //    return 0;
+        //    //Starting with return 0. We will override this method for monster and player so they have their own unique ways to calculate the damage they deal.
+        //}
 
 
     }

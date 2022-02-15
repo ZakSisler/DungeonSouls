@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dungeon_Library;
+using Heroes_Library;
 
 namespace Dungeon
 {
@@ -14,16 +16,27 @@ namespace Dungeon
 
             Console.WriteLine("DUNGEON SOULS");
 
+            Heroes player1 = new Heroes(new Pascal(), 1, "Rock type; Makes wagers");
+            Heroes player2 = new Heroes(new JoeSmoke(), 1, "Paper type; Makes wagers");
+            Heroes player3 = new Heroes(new Leszynski(), 1, "Scissors type; Makes wagers");
 
+            
+
+          
+            
+
+            
             //bool to end do while loops here
             bool exitGame = false;
-            bool intro = false;
+
+
 
 
             //if "exitGame" boolean returns false, then run this code. Otherwise: Game Over. 
             do
             {
                 bool doorOneOpened = false;
+                bool intro = false;
 
 
                 //if "intro && exitGame" booleans returns false, then run this code. Otherwise: Game Restart
@@ -132,7 +145,47 @@ namespace Dungeon
                     {
                         Console.WriteLine("You found a door! you slowly open it.\n\nYou now find yourself in a room with a large hole in the wall with wreckage and debris strewn about. \n" +
                             "before you can get your wits about you a purple parrot haphazardly flies by squawking loudly and obnoxiously" +
-                            "/n/nParrot: WHO ARE YOU?!");
+                            "\n\nParrot: WHO ARE YOU?!\n\n");
+
+                        Console.Write("\nPlease choose an action:\n" +
+                        "B) Blaise Pascal \n" +
+                        "J) Joe Smoke\n" +
+                        "L) Leszynski the Hungarian\n");
+
+                        ConsoleKey charChoice = Console.ReadKey(true).Key;
+                        //Executes on input without having to hit "Enter"
+
+                        //Clear Console
+                        Console.Clear();
+                        //string character = "";
+                        Heroes character = new Heroes();
+                        switch (charChoice)
+                        {
+                            case ConsoleKey.B:
+                                Console.WriteLine("Blaise Pascal, eh?");
+                                character = player1;
+                             break;
+                            case ConsoleKey.J:
+                                Console.WriteLine("Joe Smoke, eh?");
+                                character = player2;
+                                break;
+                            case ConsoleKey.L:
+                                Console.WriteLine("Leszynski the Hungarian, eh?");
+                                character = player3;
+                                break;
+
+                            default:
+                                Console.WriteLine("Huh?");
+                                break;
+                        }
+
+                        Console.WriteLine("Well, "+character.Name+" you wanna get outta here?");
+
+
+                        break;
+                        
+
+
 
                         //Hero will be selected here:
                         //Pop up a menu with selections of heros.
@@ -145,12 +198,12 @@ namespace Dungeon
 
 
                     }
-                    break;//??
+                        break;//??Put inside while loop above to restart game; otherwise exit game.
 
-                } while (!exitGame);
+                } while (!intro && !exitGame);
 
-            } while (!intro && !exitGame);
-            
+            } while (!exitGame);
+
         }//End main
     }
 }

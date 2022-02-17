@@ -15,10 +15,11 @@ namespace Monster_Library
         public bool IsScissors { get; set; }
 
         //Constructors
-        public KafkaBug(string name, int life, string description)
-           : base(name, life, description) { }
+        public KafkaBug(string name, int life, int maxLife, string description)
+           : base(name, life, maxLife, description) { }
 
-        //Methods
-        public KafkaBug() { }
+        //public KafkaBug() { bool IsScissors}
+        ////Methods
+        //public KafkaBug() { }
     }
 }

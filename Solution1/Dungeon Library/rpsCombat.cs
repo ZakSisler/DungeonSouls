@@ -8,25 +8,35 @@ namespace Dungeon_Library
 {
     public class RPSCombat
     {
+        bool IsRock = true;
+        bool IsPaper = true;
+        bool IsScissors = true;
         //RPS style combat mechanics here
-        
+
         //ROCK > SCISSORS
         //ROCK = ROCK
         //ROCK < PAPER
-        
+
         //PAPER > ROCK
         //PAPER = PAPER
         //PAPER < SCISSORS
-        
+
         //SCISSORS > PAPER
         //SCISSORS = SCISSORS
         //SCISSORS < ROCK
 
 
-        //public static void FightRPS(Heroes attack, Monsters counter)
+        //public static void FightRP(Heroes attack, Monsters counter)
         //{
-        //    if () ;
-        //}
+        //    if (Pascal() && KafkaBug())
+        //    {
 
+        //        Console.WriteLine("Pascal wins" character);
+        //          Pascal.life
+        //          score++
+        //    }
+        //      else if (KafkaBug() && JoeSmoke) { cw("Kafka wins") life - 1}
+        //}
+        
     }
 }

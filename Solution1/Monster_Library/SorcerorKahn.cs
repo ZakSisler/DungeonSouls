@@ -15,8 +15,8 @@ namespace Monster_Library
         public bool IsPaper { get; set; }
 
         //Constructors
-        public SorcerorKahn(string name, int life, string description)
-            : base(name, life, description) { }
+        public SorcerorKahn(string name, int life, int maxLife, string description)
+            : base(name, life, maxLife, description) { }
 
         //Methods
         public SorcerorKahn() { }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Dungeon_Library;
 using Heroes_Library;
+using Monster_Library;
 
 namespace Dungeon
 {
@@ -16,16 +17,23 @@ namespace Dungeon
 
             Console.WriteLine("DUNGEON SOULS");
 
-            Heroes player1 = new Heroes(new Pascal().HeroName, 3, 3, "Rock type; Makes wagers");
-            Heroes player2 = new Heroes(new JoeSmoke().HeroName, 3, 3, "Paper type; a cool camel");
-            Heroes player3 = new Heroes(new Leszynski().HeroName, 3, 3, "Scissors type; Hungarian Barbarian");
+            bool IsRock = true;
+            bool IsPaper = true;
+            bool IsScissors = true;
+            Heroes player1 = new Pascal("Blaise Pascal", 3, 3, "Rock type; Makes wagers\n\n----------------------", IsRock);
+            Heroes player2 = new JoeSmoke("Joe Smoke", 3, 3, "Paper type; a cool camel\n\n-----------------------", IsPaper);
+            Heroes player3 = new Leszynski("Leszynski the Hungarian", 3, 3, "Scissors type; Hungarian Barbarian\n\n-----------------------", IsScissors);
 
+           
             
 
-          
             
+            Heroes[] heroes = { player1, player2, player3 };
 
-            
+
+
+
+
             //bool to end do while loops here
             bool exitGame = false;
 
@@ -147,7 +155,7 @@ namespace Dungeon
                             "before you can get your wits about you a purple parrot haphazardly flies by squawking loudly and obnoxiously" +
                             "\n\nParrot: WHO ARE YOU?!\n\n");
 
-                        Console.Write("\nPlease choose an action:\n" +
+                        Console.Write("\nPlease choose an character:\n" +
                         "B) Blaise Pascal \n" +
                         "J) Joe Smoke\n" +
                         "L) Leszynski the Hungarian\n");
@@ -162,16 +170,22 @@ namespace Dungeon
                         switch (charChoice)
                         {
                             case ConsoleKey.B:
-                                Console.WriteLine("Blaise Pascal, eh?");
                                 character = player1;
-                             break;
+                                Console.WriteLine("Blaise Pascal, eh? Let's take a look at your info {0}" +
+                                    "\nYou can see this info at anytime by selecting \"Character Info\" in upcoming menus\n\n", character);
+                                IsRock = true;
+                                break;
                             case ConsoleKey.J:
-                                Console.WriteLine("Joe Smoke, a talking camel eh?");
                                 character = player2;
+                                Console.WriteLine("Joe Smoke, a talking camel eh? Let's take a look at your info {0}" +
+                                    "\nYou can see this info at anytime by selecting \"Character Info\" in upcoming menus\n\n", character);
+                                IsPaper = true;
                                 break;
                             case ConsoleKey.L:
-                                Console.WriteLine("Leszynski the Hungarian, eh?");
                                 character = player3;
+                                Console.WriteLine("Leszynski the Hungarian, eh?Let's take a look at your info {0}" +
+                                    "\nYou can see this info at anytime by selecting \"Character Info\" in upcoming menus\n\n", character);
+                                IsScissors = true;
                                 break;
 
                             default:
@@ -179,10 +193,10 @@ namespace Dungeon
                                 break;
                         }
 
-                        Console.WriteLine("Well, "+character.Name+" you wanna get outta here?");//solve this name issue
+                        Console.WriteLine("Well, {0} you wanna get outta here?", character.Name);//solve this name issue
                         Console.WriteLine("Before you can answer, the parrot flies out of the room, through the hole in the wall. You see a swarm of bloodthirsty rats behind you and quickly decide to follow the bird. \n\nBefore you there are three doors with colors you've never layed eyes on, their beauty unparalleled. \n\nParrot: ARE YOU GONNA LOOK AT THEM ALL DAY OR WHAT? Pick a door and let's get outta here!!");
 
-                        Console.Write("\nPlease choose a door number:\n" +
+                        Console.Write("\nPlease choose a door by entering the appropriate number below:\n" +
                        "1) The oaky, light salmon colored door\n" +//color code it?
                        "2) The bright, lemon chiffon colored door\n" +
                        "3) The dilapidated, magenta and cyan colored door\n");
@@ -192,7 +206,7 @@ namespace Dungeon
 
                         //Clear Console
                         Console.Clear();
-                        
+
                         //Score declared and initialized.
                         int score = 0;
 
@@ -202,8 +216,18 @@ namespace Dungeon
                             case ConsoleKey.D1:
                                 Console.WriteLine("Inside the first door you see a formidable foe...");
                                 //Combat initiated here
-                                
 
+                                Console.WriteLine(GetMonster());//This needs to be fixed...//////////////////////////////
+                                if (IsRock)
+                                {
+                                    string monOne = GetMonster();
+                                    if(monOne == "Small Baby")
+                                    {
+                                        Console.WriteLine("Draw");
+                                        break;
+                                    }
+
+                                }//////////////////////////////////////////FIX THIS//////////////////////////////////////
 
 
                                 //Score tallied
@@ -231,7 +255,7 @@ namespace Dungeon
                         //TODO Play again y/n added here
 
                         break;
-                        
+
 
 
 
@@ -244,13 +268,33 @@ namespace Dungeon
 
 
 
+
+
                     }
-                        break;
+                    break;
 
                 } while (!intro && !exitGame);
 
             } while (!exitGame);
 
         }//End main
+
+        public static string GetMonster()
+        {
+            Monsters mon1 = new SmallBaby("Small Baby", 1, 1, "Rock type; Don't underestimate!");
+            Monsters mon2 = new SorcerorKahn("Sorceror Kahn Troll", 1, 1, "Paper type; Source Control gone bad...");
+            Monsters mon3 = new KafkaBug("Kafka Bug", 1, 1, "Scissors type; Some bugs just won't die...");
+
+            Monsters[] monsters = { mon1, mon2, mon3 };
+
+            Random randomMonster = new Random();
+
+            int indexNbr = randomMonster.Next(monsters.Length);
+
+            string battleMonster = Convert.ToString(monsters[indexNbr]);
+
+            return battleMonster;
+
+        }
     }
 }

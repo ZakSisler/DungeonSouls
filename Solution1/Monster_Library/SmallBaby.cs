@@ -15,8 +15,8 @@ namespace Monster_Library
         public bool IsRock { get; set; }
 
         //Constructors
-        public SmallBaby(string name, int life, string description)
-           : base(name, life, description) { }
+        public SmallBaby(string name, int life, int maxLife, string description)
+           : base(name, life, maxLife, description) { }
 
         public SmallBaby() { }
 

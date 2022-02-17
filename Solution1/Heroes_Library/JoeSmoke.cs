@@ -10,14 +10,14 @@ namespace Heroes_Library
     public class JoeSmoke : Heroes
     {
         //Fields
-        private bool isPaper;
+        //private bool isPaper;
         private static Heroes heroName;
 
         //Properties
         public bool IsPaper { get; set; }
 
         //Constructors
-        public JoeSmoke(string name, int life, int maxLife, string description, bool IsPaper)
+        public JoeSmoke(string name, int life, int maxLife, string description, bool isPaper)
             : base(heroName, life, maxLife, description)
         {
             IsPaper = isPaper;

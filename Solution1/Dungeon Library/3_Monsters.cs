@@ -8,13 +8,14 @@ namespace Dungeon_Library
 {
     public class Monsters : CharacterBase
     {
+
         //Monster Ideas:
 
         //A small baby (baby)   - rock
         //Sorceror Kahn (troll) - paper
         //Kafka Bug (bug)       - scissors
 
-        //RPS will add a (positive/neutral/negative) multiplier respectively
+        //RPS will add a (positive/neutral/negative)
 
 
 
@@ -34,6 +35,7 @@ namespace Dungeon_Library
 
         //public int MaxDamage { get; set; }
         public string Description { get; set; }
+        
         //public int MinDamage
         //{
         //    get { return _minDamage; }
@@ -51,15 +53,14 @@ namespace Dungeon_Library
         //}
 
         //Constructors
-        public Monsters(string name, int life, string description)
+        public Monsters(string name, int life, int maxLife, string description)
         //: base(name, maxLife, life, hitChance, block)
         {
             //Monster inherits from the abstract class (Character) it has no constructor to inherit from. We never inherit the constructor but we are able to use the : base(params) shortcut for automatic assignment of any inherited properties. Since the character has no constructor it also does nothing for assignment of its porperties. When inheriting from an abstract but we will still need to manually perform assignment for all properties and methods, but we still need to manually perform the assignment for all properties in the CTOR.
-
-            //MaxLife = maxLife;
-            //MaxDamage = maxDamage;
             Name = name;
             Life = life;
+            MaxLife = maxLife;
+            //MaxDamage = maxDamage;
             //HitChance = hitChance;
             //MinDamage = minDamage;
             Description = description;
@@ -72,14 +73,15 @@ namespace Dungeon_Library
         {
             //return base.ToString();
             return string.Format("\n------- MONSTER -------\n" +
-                "{0}\nLife: {1} of {2}\nDamage: {3} to {4}\nDescription: {6}\n",
+                "{0}\nLife: {1} of {2} \n{3}Description:\n",
                 Name,
                 Life,
-                //MaxLife,
+                MaxLife,
                 //MinDamage,
                 //MaxDamage,
                 Description);
         }
 
+        
     }
 }

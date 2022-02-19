@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Dungeon_Library;
 using Heroes_Library;
 using Monster_Library;
+using SmallBaby = Dungeon_Library.SmallBaby;
 
 namespace Dungeon
 {
@@ -20,18 +21,33 @@ namespace Dungeon
             bool IsRock = true;
             bool IsPaper = true;
             bool IsScissors = true;
-            Heroes player1 = new Pascal("Blaise Pascal", 3, 3, "Rock type; Makes wagers\n\n----------------------", IsRock);
-            Heroes player2 = new JoeSmoke("Joe Smoke", 3, 3, "Paper type; a cool camel\n\n-----------------------", IsPaper);
-            Heroes player3 = new Leszynski("Leszynski the Hungarian", 3, 3, "Scissors type; Hungarian Barbarian\n\n-----------------------", IsScissors);
+            Heroes player1 = new Pascal("Blaise Pascal", 3, 3, "Rock type; Makes wagers\\n----------------------", IsRock);
+            Heroes player2 = new JoeSmoke("Joe Smoke", 3, 3, "Paper type; a cool camel\\n-----------------------", IsPaper);
+            Heroes player3 = new Leszynski("Leszynski the Hungarian", 3, 3, "Scissors type; Hungarian Barbarian\n-----------------------", IsScissors);
 
-           
-            
 
-            
+
+
+
             Heroes[] heroes = { player1, player2, player3 };
 
 
+            Monsters mon1 = new SmallBaby();
+            Monsters mon2 = new SorcerorKahn();
+            Monsters mon3 = new KafkaBug();
 
+            Monsters[] monsters = { mon1, mon2, mon3 };
+
+            Random randomMonster = new Random();
+
+            int indexNbr = randomMonster.Next(monsters.Length);
+
+
+
+
+            //monsters
+
+            //Monsters battleMonster = monsters[indexNbr];
 
 
             //bool to end do while loops here
@@ -217,17 +233,28 @@ namespace Dungeon
                                 Console.WriteLine("Inside the first door you see a formidable foe...");
                                 //Combat initiated here
 
-                                Console.WriteLine(GetMonster());//This needs to be fixed...//////////////////////////////
-                                if (IsRock)
+                                if (character.Name == "Blaise Pascal" && monsters.Name == "Small Baby")
                                 {
-                                    string monOne = GetMonster();
-                                    if(monOne == "Small Baby")
-                                    {
-                                        Console.WriteLine("Draw");
-                                        break;
-                                    }
+                                    Console.WriteLine("Draw");
+                                }
 
-                                }//////////////////////////////////////////FIX THIS/////////////////////////////////////
+                                //if (character == player1)
+                                //{
+
+                                //    if (character.Name == "Blaise Pascal")
+                                //    {
+                                //        Console.WriteLine("DRAW!");
+                                //        break;
+                                //    }
+                                //    else
+                                //    {
+                                //        Console.WriteLine("BING BONG!");
+                                //    }
+
+
+                                //}
+
+
 
 
                                 //Score tallied
@@ -279,22 +306,26 @@ namespace Dungeon
 
         }//End main
 
-        public static string GetMonster()
-        {
-            Monsters mon1 = new SmallBaby("Small Baby", 1, 1, "Rock type; Don't underestimate!");
-            Monsters mon2 = new SorcerorKahn("Sorceror Kahn Troll", 1, 1, "Paper type; Source Control gone bad...");
-            Monsters mon3 = new KafkaBug("Kafka Bug", 1, 1, "Scissors type; Some bugs just won't die...");
+        //public static void GetMonster()
+        //{
+        //Monsters mon1 = new SmallBaby();
+        //Monsters mon2 = new SorcerorKahn();
+        //Monsters mon3 = new KafkaBug();
 
-            Monsters[] monsters = { mon1, mon2, mon3 };
+        //Monsters[] monsters = { mon1, mon2, mon3 };
 
-            Random randomMonster = new Random();
+        //Random randomMonster = new Random();
 
-            int indexNbr = randomMonster.Next(monsters.Length);
+        //int indexNbr = randomMonster.Next(monsters.Length);
 
-            string battleMonster = Convert.ToString(monsters[indexNbr]);
 
-            return battleMonster;
+        ////monsters
 
-        }
+        //Monsters battleMonster = monsters[indexNbr];
+
+
+        //return battleMonster;
+
+        //}
     }
 }

@@ -18,7 +18,13 @@ namespace Monster_Library
         public SmallBaby(string name, int life, int maxLife, string description)
            : base(name, life, maxLife, description) { }
 
-        public SmallBaby() { }
+        public SmallBaby()
+        {
+            Name = "A Small Baby";
+            Life = 1;
+            MaxLife = 1;
+            Description = "Rock type; Don't underestimate!";
+        }
 
         //Methods
     }

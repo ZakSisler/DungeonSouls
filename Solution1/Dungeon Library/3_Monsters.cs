@@ -58,8 +58,8 @@ namespace Dungeon_Library
         {
             //Monster inherits from the abstract class (Character) it has no constructor to inherit from. We never inherit the constructor but we are able to use the : base(params) shortcut for automatic assignment of any inherited properties. Since the character has no constructor it also does nothing for assignment of its porperties. When inheriting from an abstract but we will still need to manually perform assignment for all properties and methods, but we still need to manually perform the assignment for all properties in the CTOR.
             Name = name;
-            Life = life;
-            MaxLife = maxLife;
+            Life = 1;
+            MaxLife = 1;
             //MaxDamage = maxDamage;
             //HitChance = hitChance;
             //MinDamage = minDamage;
@@ -73,7 +73,7 @@ namespace Dungeon_Library
         {
             //return base.ToString();
             return string.Format("\n------- MONSTER -------\n" +
-                "{0}\nLife: {1} of {2} \n{3}Description:\n",
+                "{0}\nLife: {1} of {2} \nDescription:{3}\n",
                 Name,
                 Life,
                 MaxLife,

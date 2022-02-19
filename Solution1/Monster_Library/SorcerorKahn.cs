@@ -19,6 +19,12 @@ namespace Monster_Library
             : base(name, life, maxLife, description) { }
 
         //Methods
-        public SorcerorKahn() { }
+        public SorcerorKahn()
+        {
+            Name = "Sorceror Kahn Troll";
+            Life = 1;
+            MaxLife = 1;
+            Description = "Paper type; Source Control gone bad...";
+        }
     }
 }

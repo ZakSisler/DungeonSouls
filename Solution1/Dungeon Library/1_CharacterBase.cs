@@ -9,34 +9,16 @@ namespace Dungeon_Library
     public abstract class CharacterBase
     {
         //Fields
-        private int _life;
+        
 
         //Properties
         public string Name { get; set; }
 
         //public int HitChance { get; set; }
 
-        public int MaxLife { get; set; }
+        //public int MaxLife { get; set; }
 
-        public int Life
-        {
-            get { return _life; }
-            set
-            {
-                //Biz rule: Life shouldnt exceed MaxLife
-                if (value <= MaxLife)
-                {
-                    //Good!
-                    _life = value;
-                }
-                else
-                {
-                    //Tried to set a value for life that was greater than MaxLife
-                    //So default life to the MaxLife value
-                    _life = MaxLife;
-                }
-            }
-        }
+       
 
         //Constructors
         //We have already done all of the work for the FQCTOR of player, so we'll opt not to create any constructors

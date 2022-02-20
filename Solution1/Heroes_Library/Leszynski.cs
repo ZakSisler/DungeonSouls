@@ -26,8 +26,38 @@ namespace Heroes_Library
         public Leszynski()
         {
             Name = "Leszynski the Hungarian";
+
         }
 
+
         //Methods
+        public override string ToString()
+        {
+            return string.Format("Leszynski the Hungarian");
+        }
+
+        public static void FightS(Monsters battleMonster)
+        {
+            int score = 0;
+
+            if (battleMonster.Name == "Kafka Bug")
+            {
+                //Scissors vs Scissors type
+                Console.WriteLine("Draw!");
+                //Character flees; No damage taken, no score increased.
+            }
+            else if (battleMonster.Name == "Small Baby")
+            {
+                //Scissors vs Rock type
+                Console.WriteLine("You take damage, but the enemy has been defeated!");
+                //Hero takes 1 damage to Life out of 3 MaxLife; If life = zero game over
+            }
+            else if (battleMonster.Name == "Sorcer Kahn Troll")
+            {
+                //Scissors vs Paper type
+                Console.WriteLine("You win!");
+                score++;
+            }
+        }
     }
 }

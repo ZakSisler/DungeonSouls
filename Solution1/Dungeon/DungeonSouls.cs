@@ -19,31 +19,31 @@ namespace Dungeon
             Console.WriteLine("DUNGEON SOULS");
 
             int score = 0;
-            bool IsRock = true;
-            bool IsPaper = true;
-            bool IsScissors = true;
-            Heroes player1 = new Pascal("Blaise Pascal", 3, 3, "Rock type; Makes wagers\\n----------------------", IsRock);
-            Heroes player2 = new JoeSmoke("Joe Smoke", 3, 3, "Paper type; a cool camel\\n-----------------------", IsPaper);
-            Heroes player3 = new Leszynski("Leszynski the Hungarian", 3, 3, "Scissors type; Hungarian Barbarian\n-----------------------", IsScissors);
+            //bool IsRock = true;
+            //bool IsPaper = true;
+            //bool IsScissors = true;
+            Pascal player1 = new Pascal();
+            JoeSmoke player2 = new JoeSmoke();
+            Leszynski player3 = new Leszynski();
 
 
 
 
 
-            Heroes[] heroes = { player1, player2, player3 };
+            //Heroes[] heroes = { player1, player2, player3 };
 
 
-            Monsters mon1 = new SmallBaby();
-            Monsters mon2 = new SorcerorKahn();
-            Monsters mon3 = new KafkaBug();
+            //Monsters mon1 = new SmallBaby();
+            //Monsters mon2 = new SorcerorKahn();
+            //Monsters mon3 = new KafkaBug();
 
-            Monsters[] monsters = { mon1, mon2, mon3 };
+            //Monsters[] monsters = { mon1, mon2, mon3 };
 
-            Random randomMonster = new Random();
+            //Random randomMonster = new Random();
 
-            int battleMonster = randomMonster.Next(monsters.Length);
+            //int battleMonster = randomMonster.Next(monsters.Length);
 
-            string BattleMonster = Convert.ToString(battleMonster);
+            //string BattleMonster = Convert.ToString(battleMonster);
 
 
             //monsters
@@ -62,11 +62,38 @@ namespace Dungeon
             {
                 bool doorOneOpened = false;
                 bool intro = false;
+                Console.WriteLine("\n\nNEW GAME");
                 Console.WriteLine(GetDungeon());
+
+               
 
                 //if "intro && exitGame" booleans returns false, then run this code. Otherwise: Game Restart
                 do
                 {
+
+
+                    
+                        Monsters mon1 = new SmallBaby();
+                        Monsters mon2 = new SorcerorKahn();
+                        Monsters mon3 = new KafkaBug();
+
+                        Monsters[] monsters = { mon1, mon2, mon3 };
+
+                        Random randomMonster = new Random();
+
+                        int indexNbr = randomMonster.Next(monsters.Length);
+
+
+                        //monsters
+
+                        Monsters battleMonster = monsters[indexNbr];
+
+
+                        //return battleMonster;
+
+                    
+
+
 
                     //Story is introduced; A decision must be made.
                     Console.WriteLine("\n\nPiercing through the darkness, a faint light peeks through the ceiling... \n" +
@@ -188,21 +215,18 @@ namespace Dungeon
                         {
                             case ConsoleKey.B:
                                 character = player1;
-                                Console.WriteLine("Blaise Pascal, eh? Let's take a look at your info {0}" +
-                                    "\nYou can see this info at anytime by selecting \"Character Info\" in upcoming menus\n\n", character);
-                                IsRock = true;
+                                Console.WriteLine("{0}, eh?", character);
+                                //IsRock = true;
                                 break;
                             case ConsoleKey.J:
                                 character = player2;
-                                Console.WriteLine("Joe Smoke, a talking camel eh? Let's take a look at your info {0}" +
-                                    "\nYou can see this info at anytime by selecting \"Character Info\" in upcoming menus\n\n", character);
-                                IsPaper = true;
+                                Console.WriteLine("{0}, eh ? ", character);
+                                //IsPaper = true;
                                 break;
                             case ConsoleKey.L:
                                 character = player3;
-                                Console.WriteLine("Leszynski the Hungarian, eh?Let's take a look at your info {0}" +
-                                    "\nYou can see this info at anytime by selecting \"Character Info\" in upcoming menus\n\n", character);
-                                IsScissors = true;
+                                Console.WriteLine("{0}, eh ? ", character);
+                                //IsScissors = true;
                                 break;
 
                             default:
@@ -233,24 +257,73 @@ namespace Dungeon
                             case ConsoleKey.D1:
                                 Console.WriteLine("Inside the first door you see a formidable foe...");
                                 //Combat initiated here
+                                
+                                Console.WriteLine("You face: " + battleMonster.Name);
 
+                                if (character == player1)
+                                {
+                                    Pascal.FightR(battleMonster);
+                                }
+                                else if (character == player2)
+                                {
+                                    JoeSmoke.FightP(battleMonster);
+                                }
+                                else
+                                {
+                                    Leszynski.FightS(battleMonster);
+                                }
+                                break;
+
+                                //Pascal.FightR(character, battleMonster.Name);
+
+                                
 
                                 //Score tallied
-                                score++;
+                                
                                 //Game win/lose determined
-                                break;
+                                
                             case ConsoleKey.D2:
                                 Console.WriteLine("Inside the second door you see a ferocious beast...");
                                 //Combat initiated here
+                                Console.WriteLine("You face: " + battleMonster.Name);
+
+                                if (character == player1)
+                                {
+                                    Pascal.FightR(battleMonster);
+                                }
+                                else if (character == player2)
+                                {
+                                    JoeSmoke.FightP(battleMonster);
+                                }
+                                else
+                                {
+                                    Leszynski.FightS(battleMonster);
+                                }
+                                break;
                                 //Score tallied
                                 //Game win/lose determined
-                                break;
+                                
                             case ConsoleKey.D3:
                                 Console.WriteLine("Inside the third door you see a fiend unimaginable...");
                                 //Combat initiated here
+                                Console.WriteLine("You face: " + battleMonster.Name);
+
+                                if (character == player1)
+                                {
+                                    Pascal.FightR(battleMonster);
+                                }
+                                else if (character == player2)
+                                {
+                                    JoeSmoke.FightP(battleMonster);
+                                }
+                                else
+                                {
+                                    Leszynski.FightS(battleMonster);
+                                }
+                                break;
                                 //Score tallied
                                 //Game win/lose determined
-                                break;
+                                
 
                             default:
                                 Console.WriteLine("That's not a door? What are you doing over there?");
@@ -310,23 +383,23 @@ namespace Dungeon
 
         //public static void GetMonster()
         //{
-        //Monsters mon1 = new SmallBaby();
-        //Monsters mon2 = new SorcerorKahn();
-        //Monsters mon3 = new KafkaBug();
+        //    Monsters mon1 = new SmallBaby();
+        //    Monsters mon2 = new SorcerorKahn();
+        //    Monsters mon3 = new KafkaBug();
 
-        //Monsters[] monsters = { mon1, mon2, mon3 };
+        //    Monsters[] monsters = { mon1, mon2, mon3 };
 
-        //Random randomMonster = new Random();
+        //    Random randomMonster = new Random();
 
-        //int indexNbr = randomMonster.Next(monsters.Length);
-
-
-        ////monsters
-
-        //Monsters battleMonster = monsters[indexNbr];
+        //    int indexNbr = randomMonster.Next(monsters.Length);
 
 
-        //return battleMonster;
+        //    //monsters
+
+        //    Monsters battleMonster = monsters[indexNbr];
+
+
+        //    //return battleMonster;
 
         //}
     }

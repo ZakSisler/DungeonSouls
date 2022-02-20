@@ -7,81 +7,85 @@ using System.Threading.Tasks;
 namespace Dungeon_Library
 {
     public class RPSCombat
-    {
-        public static void FightR(Heroes heroes, Monsters monsters)
-        {
-            int score = 0;
+    {  }
 
 
-            if (heroes.Name == "Blaise Pascal" && monsters.Name == "Small Baby")
-            {
-                //Rock vs. Rock type
-                Console.WriteLine("Draw!");
-                //Character flees; No damage taken, no score increased.
-            }
-            else if (heroes.Name == "Blaise Pascal" && monsters.Name == "Sorceror Kahn Troll")
-            {
-                //Rock vs Paper type
-                Console.WriteLine("You take damage, but the enemy has been defeated!");
-                //Hero takes 1 damage to Life out of 3 MaxLife; If life = zero game over
-            }
-            else if (heroes.Name == "Blaise Pascal" && monsters.Name == "Kafka Bug")
-            {
-                //Rock vs Scissors type
-                Console.WriteLine("You win!");
-                score++;
-            }
-        }
-        public static void FightP(Heroes heroes, Monsters monsters)
-        {
-            int score = 0;
-
-            if (heroes.Name == "Joe Smoke" && monsters.Name == "Sorceror Kahn Troll")
-            {
-                //Paper vs. Paper type
-                Console.WriteLine("Draw!");
-                //Character flees; No damage taken, no score increased.
-            }
-            else if (heroes.Name == "Joe Smoke" && monsters.Name == "Kafka Bug")
-            {
-                //Paper vs Scissors type
-                Console.WriteLine("You take damage, but the enemy has been defeated!");
-                //Hero takes 1 damage to Life out of 3 MaxLife; If life = zero game over
-            }
-            else if (heroes.Name == "Joe Smoke" && monsters.Name == "Small Baby")
-            {
-                //Paper vs Rock
-                Console.WriteLine("You win!");
-                score++;
-            }
-        }
-
-        public static void FightS(Heroes heroes, Monsters monsters)
-        {
-            int score = 0;
-
-            if (heroes.Name == "Leszynski the Hungarian" && monsters.Name == "Kafka Bug")
-            {
-                //Scissors vs Scissors type
-                Console.WriteLine("Draw!");
-                //Character flees; No damage taken, no score increased.
-            }
-            else if (heroes.Name == "Leszynski the Hungarian" && monsters.Name == "Small Baby")
-            {
-                //Scissors vs Rock type
-                Console.WriteLine("You take damage, but the enemy has been defeated!");
-                //Hero takes 1 damage to Life out of 3 MaxLife; If life = zero game over
-            }
-            else if (heroes.Name == "Leszynski the Hungarian" && monsters.Name == "Sorcer Kahn Troll")
-            {
-                //Scissors vs Paper type
-                Console.WriteLine("You win!");
-                score++;
-            }
-        }
-    }
 
 }
+    //public static void FightR(Heroes heroes, Monsters monsters)
+    //{
+    //    int score = 0;
+
+
+    //    if (heroes.Name == "Blaise Pascal" && monsters.Name == "Small Baby")
+    //    {
+    //        //Rock vs. Rock type
+    //        Console.WriteLine("Draw!");
+    //        //Character flees; No damage taken, no score increased.
+
+    //    }
+    //    else if (heroes.Name == "Blaise Pascal" && monsters.Name == "Sorceror Kahn Troll")
+    //    {
+    //        //Rock vs Paper type
+    //        Console.WriteLine("You take damage, but the enemy has been defeated!");
+    //        //Hero takes 1 damage to Life out of 3 MaxLife; If life = zero game over
+    //    }
+    //    else if (heroes.Name == "Blaise Pascal" && monsters.Name == "Kafka Bug")
+    //    {
+    //        //Rock vs Scissors type
+    //        Console.WriteLine("You win!");
+    //        score++;
+    //    }
+    //}
+    //public static void FightP(Heroes heroes, Monsters monsters)
+    //{
+    //    int score = 0;
+
+    //    if (heroes.Name == "Joe Smoke" && monsters.Name == "Sorceror Kahn Troll")
+    //    {
+    //        //Paper vs. Paper type
+    //        Console.WriteLine("Draw!");
+    //        //Character flees; No damage taken, no score increased.
+    //    }
+    //    else if (heroes.Name == "Joe Smoke" && monsters.Name == "Kafka Bug")
+    //    {
+    //        //Paper vs Scissors type
+    //        Console.WriteLine("You take damage, but the enemy has been defeated!");
+    //        //Hero takes 1 damage to Life out of 3 MaxLife; If life = zero game over
+    //    }
+    //    else if (heroes.Name == "Joe Smoke" && monsters.Name == "Small Baby")
+    //    {
+    //        //Paper vs Rock
+    //        Console.WriteLine("You win!");
+    //        score++;
+    //    }
+    //}
+
+    //public static void FightS(Heroes heroes, Monsters monsters)
+    //{
+    //    int score = 0;
+
+    //    if (heroes.Name == "Leszynski the Hungarian" && monsters.Name == "Kafka Bug")
+    //    {
+    //        //Scissors vs Scissors type
+    //        Console.WriteLine("Draw!");
+    //        //Character flees; No damage taken, no score increased.
+    //    }
+    //    else if (heroes.Name == "Leszynski the Hungarian" && monsters.Name == "Small Baby")
+    //    {
+    //        //Scissors vs Rock type
+    //        Console.WriteLine("You take damage, but the enemy has been defeated!");
+    //        //Hero takes 1 damage to Life out of 3 MaxLife; If life = zero game over
+    //    }
+    //    else if (heroes.Name == "Leszynski the Hungarian" && monsters.Name == "Sorcer Kahn Troll")
+    //    {
+    //        //Scissors vs Paper type
+    //        Console.WriteLine("You win!");
+    //        score++;
+    //    }
+    //}
+
+
 
 
 
@@ -116,7 +120,7 @@ namespace Dungeon_Library
 
 //                                Random randomMonster = new Random();
 
-//                                int indexNbr = randomMonster.Next(monstersArray.Length);
+//                                int battleMonster = randomMonster.Next(monstersArray.Length);
 //                                System.Threading.Thread.Sleep(30);
 //                            }
 

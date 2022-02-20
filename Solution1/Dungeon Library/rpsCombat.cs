@@ -6,58 +6,138 @@ using System.Threading.Tasks;
 
 namespace Dungeon_Library
 {
-    public class SmallBaby : Monsters
+    public class RPSCombat
     {
-        public class SorcerorKahn : Monsters
+        public static void FightR(Heroes heroes, Monsters monsters)
         {
-            public class KafkaBug : Monsters
+            int score = 0;
+
+
+            if (heroes.Name == "Blaise Pascal" && monsters.Name == "Small Baby")
             {
-                public class Pascal : Heroes
-                {
-                    public class JoeSmoke : Heroes
-                    {
-                        public class Leszynski : Heroes
-                        {
+                //Rock vs. Rock type
+                Console.WriteLine("Draw!");
+                //Character flees; No damage taken, no score increased.
+            }
+            else if (heroes.Name == "Blaise Pascal" && monsters.Name == "Sorceror Kahn Troll")
+            {
+                //Rock vs Paper type
+                Console.WriteLine("You take damage, but the enemy has been defeated!");
+                //Hero takes 1 damage to Life out of 3 MaxLife; If life = zero game over
+            }
+            else if (heroes.Name == "Blaise Pascal" && monsters.Name == "Kafka Bug")
+            {
+                //Rock vs Scissors type
+                Console.WriteLine("You win!");
+                score++;
+            }
+        }
+        public static void FightP(Heroes heroes, Monsters monsters)
+        {
+            int score = 0;
 
-                            public static void GetMonster()
-                            {
-                                Heroes player1 = new Pascal();
-                                Heroes player2 = new JoeSmoke();
-                                Heroes player3 = new Leszynski();
+            if (heroes.Name == "Joe Smoke" && monsters.Name == "Sorceror Kahn Troll")
+            {
+                //Paper vs. Paper type
+                Console.WriteLine("Draw!");
+                //Character flees; No damage taken, no score increased.
+            }
+            else if (heroes.Name == "Joe Smoke" && monsters.Name == "Kafka Bug")
+            {
+                //Paper vs Scissors type
+                Console.WriteLine("You take damage, but the enemy has been defeated!");
+                //Hero takes 1 damage to Life out of 3 MaxLife; If life = zero game over
+            }
+            else if (heroes.Name == "Joe Smoke" && monsters.Name == "Small Baby")
+            {
+                //Paper vs Rock
+                Console.WriteLine("You win!");
+                score++;
+            }
+        }
 
-                                Monsters mon1 = new SmallBaby();
-                                Monsters mon2 = new SorcerorKahn();
-                                Monsters mon3 = new KafkaBug();
+        public static void FightS(Heroes heroes, Monsters monsters)
+        {
+            int score = 0;
 
-
-
-                                Heroes[] heroesArray = { player1, player2, player3 };
-                                Monsters[] monstersArray = { mon1, mon2, mon3 };
-
-                                Random randomMonster = new Random();
-
-                                int indexNbr = randomMonster.Next(monstersArray.Length);
-                                System.Threading.Thread.Sleep(30);
-                            }
-
-                            public static void RPSAttack(CharacterBase attacker, CharacterBase defender)
-                            {
-
-
-
-                            }
-                            public static void RPSFight()
-                            {
-
-                            }
-
-                        }
-                    }
-                }
+            if (heroes.Name == "Leszynski the Hungarian" && monsters.Name == "Kafka Bug")
+            {
+                //Scissors vs Scissors type
+                Console.WriteLine("Draw!");
+                //Character flees; No damage taken, no score increased.
+            }
+            else if (heroes.Name == "Leszynski the Hungarian" && monsters.Name == "Small Baby")
+            {
+                //Scissors vs Rock type
+                Console.WriteLine("You take damage, but the enemy has been defeated!");
+                //Hero takes 1 damage to Life out of 3 MaxLife; If life = zero game over
+            }
+            else if (heroes.Name == "Leszynski the Hungarian" && monsters.Name == "Sorcer Kahn Troll")
+            {
+                //Scissors vs Paper type
+                Console.WriteLine("You win!");
+                score++;
             }
         }
     }
+
 }
+
+
+
+
+//    public class SmallBaby : Monsters
+//    {
+//        public class SorcerorKahn : Monsters
+//        {
+//            public class KafkaBug : Monsters
+//            {
+//                public class Pascal : Heroes
+//                {
+//                    public class JoeSmoke : Heroes
+//                    {
+//                        public class Leszynski : Heroes
+//                        {
+
+//                            public static void GetMonster()
+//                            {
+//                                Heroes player1 = new Pascal();
+//                                Heroes player2 = new JoeSmoke();
+//                                Heroes player3 = new Leszynski();
+
+//                                Monsters mon1 = new SmallBaby();
+//                                Monsters mon2 = new SorcerorKahn();
+//                                Monsters mon3 = new KafkaBug();
+
+
+
+//                                Heroes[] heroesArray = { player1, player2, player3 };
+//                                Monsters[] monstersArray = { mon1, mon2, mon3 };
+
+//                                Random randomMonster = new Random();
+
+//                                int indexNbr = randomMonster.Next(monstersArray.Length);
+//                                System.Threading.Thread.Sleep(30);
+//                            }
+
+//                            public static void RPSAttack(CharacterBase attacker, CharacterBase defender)
+//                            {
+
+
+
+//                            }
+//                            public static void RPSFight()
+//                            {
+
+//                            }
+
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}
 
 
 //string rock = "rock";

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Dungeon_Library;
 using Heroes_Library;
 using Monster_Library;
-using SmallBaby = Dungeon_Library.SmallBaby;
+
 
 namespace Dungeon
 {
@@ -18,6 +18,7 @@ namespace Dungeon
 
             Console.WriteLine("DUNGEON SOULS");
 
+            int score = 0;
             bool IsRock = true;
             bool IsPaper = true;
             bool IsScissors = true;
@@ -40,9 +41,9 @@ namespace Dungeon
 
             Random randomMonster = new Random();
 
-            int indexNbr = randomMonster.Next(monsters.Length);
+            int battleMonster = randomMonster.Next(monsters.Length);
 
-
+            string BattleMonster = Convert.ToString(battleMonster);
 
 
             //monsters
@@ -61,7 +62,7 @@ namespace Dungeon
             {
                 bool doorOneOpened = false;
                 bool intro = false;
-
+                Console.WriteLine(GetDungeon());
 
                 //if "intro && exitGame" booleans returns false, then run this code. Otherwise: Game Restart
                 do
@@ -224,7 +225,7 @@ namespace Dungeon
                         Console.Clear();
 
                         //Score declared and initialized.
-                        int score = 0;
+                        //int score = 0;
 
                         switch (charDoor)
                         {
@@ -232,29 +233,6 @@ namespace Dungeon
                             case ConsoleKey.D1:
                                 Console.WriteLine("Inside the first door you see a formidable foe...");
                                 //Combat initiated here
-
-                                if (character.Name == "Blaise Pascal" && monsters.Name == "Small Baby")
-                                {
-                                    Console.WriteLine("Draw");
-                                }
-
-                                //if (character == player1)
-                                //{
-
-                                //    if (character.Name == "Blaise Pascal")
-                                //    {
-                                //        Console.WriteLine("DRAW!");
-                                //        break;
-                                //    }
-                                //    else
-                                //    {
-                                //        Console.WriteLine("BING BONG!");
-                                //    }
-
-
-                                //}
-
-
 
 
                                 //Score tallied
@@ -305,6 +283,30 @@ namespace Dungeon
             } while (!exitGame);
 
         }//End main
+
+        private static string GetDungeon()
+        {
+            string[] dungeons =
+                {
+                    "You find yourself in a dark prison",
+                    "You are locked within a torture chamber",
+                    "You are at your buddy steve's",
+                    "You are at an abandoned mall",
+                    "You are in your basement",
+                    "You are at a napalm death concert",
+                    "You are in a simulated hellscape",
+                    "You are cold and alone in a medieval prisoners cell"
+                };
+
+            Random randomDungeon = new Random();
+
+            int indexNbr = randomDungeon.Next(dungeons.Length);
+
+            string dungeon = dungeons[indexNbr];
+
+            return dungeon;
+
+        }
 
         //public static void GetMonster()
         //{

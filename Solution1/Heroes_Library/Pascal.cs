@@ -26,9 +26,7 @@ namespace Heroes_Library
         public Pascal()
         {
             Name = "Blaise Pascal";
-            Life = 3;
-            MaxLife = 3;
-            Description = "Makes Wagers; Rock type.";
+            
         }
 
         //Methods

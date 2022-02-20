@@ -20,10 +20,7 @@ namespace Monster_Library
 
         public SmallBaby()
         {
-            Name = "A Small Baby";
-            Life = 1;
-            MaxLife = 1;
-            Description = "Rock type; Don't underestimate!";
+            Name = "Small Baby";
         }
 
         //Methods

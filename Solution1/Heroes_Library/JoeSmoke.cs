@@ -23,7 +23,10 @@ namespace Heroes_Library
             IsPaper = isPaper;
         }
 
-        public JoeSmoke() { }
+        public JoeSmoke()
+        {
+            Name = "Joe Smoke";
+        }
 
         //Methods
     }

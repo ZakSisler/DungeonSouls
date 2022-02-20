@@ -21,9 +21,7 @@ namespace Monster_Library
         public KafkaBug()
         {
             Name = "Kafka Bug";
-            Life = 1;
-            MaxLife = 1;
-            Description = "Scissors type; Some bugs just won't die...";
+            
 
         }
 

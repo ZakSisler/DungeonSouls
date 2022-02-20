@@ -23,7 +23,10 @@ namespace Heroes_Library
             IsScissors = isScissors;
         }
 
-        public Leszynski() { }
+        public Leszynski()
+        {
+            Name = "Leszynski the Hungarian";
+        }
 
         //Methods
     }

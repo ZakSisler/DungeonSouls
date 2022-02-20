@@ -58,7 +58,7 @@ namespace Heroes_Library
                 //Rock vs Paper type
                 Console.WriteLine("You take damage, but the enemy has been defeated!");
                 //Hero takes 1 damage to Life out of 3 MaxLife; If life = zero game over
-                Life -= 1;
+                //Life -= 1;
             }
             else if (battleMonster.Name == "Kafka Bug")
             {

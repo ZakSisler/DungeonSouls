@@ -17,11 +17,11 @@ namespace Heroes_Library
         public bool IsPaper { get; set; }
 
         //Constructors
-        public JoeSmoke(string name, int life, int maxLife, string description, bool isPaper)
-            : base(heroName, life, maxLife, description)
-        {
-            IsPaper = isPaper;
-        }
+        //public JoeSmoke(string name, int life, int maxLife, string description, bool isPaper)
+        //    : base(heroName, life, maxLife, description)
+        //{
+        //    IsPaper = isPaper;
+        //}
 
         public JoeSmoke()
         {

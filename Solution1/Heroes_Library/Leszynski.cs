@@ -17,11 +17,11 @@ namespace Heroes_Library
         public bool IsScissors { get; set; }
 
         //Constructors
-        public Leszynski(string name, int life, int maxLife, string description, bool IsScissors)
-            : base(heroName, life, maxLife, description)
-        {
-            IsScissors = isScissors;
-        }
+        //public Leszynski(string name, int life, int maxLife, string description, bool IsScissors)
+        //    : base(heroName, life, maxLife, description)
+        //{
+        //    IsScissors = isScissors;
+        //}
 
         public Leszynski()
         {

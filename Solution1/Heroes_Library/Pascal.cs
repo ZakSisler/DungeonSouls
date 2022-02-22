@@ -42,30 +42,34 @@ namespace Heroes_Library
             return string.Format("Blaise Pascal");
         }
 
-        public static void FightR(Monsters battleMonster)
+        public static int FightR(Monsters battleMonster)
         {
-            int score = 0;
+            int win = 1;
+            
 
             if (battleMonster.Name == "Small Baby")
             {
                 //Rock vs. Rock type
                 Console.WriteLine("Draw!");
                 //Character flees; No damage taken, no score increased.
-
+                win = 2;
             }
             else if (battleMonster.Name == "Sorceror Kahn Troll")
             {
                 //Rock vs Paper type
-                Console.WriteLine("You take damage, but the enemy has been defeated!");
+                Console.WriteLine("You take damage, and the enemy has escaped!");
                 //Hero takes 1 damage to Life out of 3 MaxLife; If life = zero game over
                 //Life -= 1;
+                win = 1;
             }
             else if (battleMonster.Name == "Kafka Bug")
             {
                 //Rock vs Scissors type
                 Console.WriteLine("You win!");
-                score++;
+                win = 3;
             }
+            return win;
+
         }
     }
 }

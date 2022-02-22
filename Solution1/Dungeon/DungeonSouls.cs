@@ -65,33 +65,33 @@ namespace Dungeon
                 Console.WriteLine("\n\nNEW GAME");
                 Console.WriteLine(GetDungeon());
 
-               
+
 
                 //if "intro && exitGame" booleans returns false, then run this code. Otherwise: Game Restart
                 do
                 {
 
 
-                    
-                        Monsters mon1 = new SmallBaby();
-                        Monsters mon2 = new SorcerorKahn();
-                        Monsters mon3 = new KafkaBug();
 
-                        Monsters[] monsters = { mon1, mon2, mon3 };
+                    Monsters mon1 = new SmallBaby();
+                    Monsters mon2 = new SorcerorKahn();
+                    Monsters mon3 = new KafkaBug();
 
-                        Random randomMonster = new Random();
+                    Monsters[] monsters = { mon1, mon2, mon3 };
 
-                        int indexNbr = randomMonster.Next(monsters.Length);
+                    Random randomMonster = new Random();
 
-
-                        //monsters
-
-                        Monsters battleMonster = monsters[indexNbr];
+                    int indexNbr = randomMonster.Next(monsters.Length);
 
 
-                        //return battleMonster;
+                    //monsters
 
-                    
+                    Monsters battleMonster = monsters[indexNbr];
+
+
+                    //return battleMonster;
+
+
 
 
 
@@ -200,9 +200,9 @@ namespace Dungeon
                             "\n\nParrot: WHO ARE YOU?!\n\n");
 
                         Console.Write("\nPlease choose an character:\n" +
-                        "B) Blaise Pascal \n" +
-                        "J) Joe Smoke\n" +
-                        "L) Leszynski the Hungarian\n");
+                        "B) Blaise Pascal (Rock Type)\n" +
+                        "J) Joe Smoke (Paper Type)\n" +
+                        "L) Leszynski the Hungarian (Scissors Type)\n");
 
                         ConsoleKey charChoice = Console.ReadKey(true).Key;
                         //Executes on input without having to hit "Enter"
@@ -234,7 +234,7 @@ namespace Dungeon
                                 break;
                         }
 
-                        Console.WriteLine("Well, {0} you wanna get outta here?", character.Name);//solve this name issue
+                        Console.WriteLine("Well, {0}, you wanna get outta here?", character.Name);//solve this name issue
                         Console.WriteLine("Before you can answer, the parrot flies out of the room, through the hole in the wall. You see a swarm of bloodthirsty rats behind you and quickly decide to follow the bird. \n\nBefore you there are three doors with colors you've never layed eyes on, their beauty unparalleled. \n\nParrot: ARE YOU GONNA LOOK AT THEM ALL DAY OR WHAT? Pick a door and let's get outta here!!");
 
                         Console.Write("\nPlease choose a door by entering the appropriate number below:\n" +
@@ -251,37 +251,86 @@ namespace Dungeon
                         //Score declared and initialized.
                         //int score = 0;
 
+                                    int win = 1;
                         switch (charDoor)
                         {
                             //TODO fix this switch for door selection / monster randomization
                             case ConsoleKey.D1:
                                 Console.WriteLine("Inside the first door you see a formidable foe...");
                                 //Combat initiated here
-                                
+
                                 Console.WriteLine("You face: " + battleMonster.Name);
 
                                 if (character == player1)
                                 {
                                     Pascal.FightR(battleMonster);
+                                    if (win == 3)
+                                    {
+                                        score++;
+                                        Console.WriteLine("Current Score: {0}", score);
+                                    }
+                                    else if (win == 1)
+                                    {
+
+                                        character.Life -= 1;
+                                        Console.WriteLine("{0} has {1} life points out of 3", character, character.Life);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Keep fighting!!");
+                                        continue;
+                                    }
                                 }
                                 else if (character == player2)
                                 {
                                     JoeSmoke.FightP(battleMonster);
+                                    if (win == 3)
+                                    {
+                                        score++;
+                                        Console.WriteLine("Current Score: {0}", score);
+                                    }
+                                    else if (win == 1)
+                                    {
+
+                                        character.Life -= 1;
+                                        Console.WriteLine("{0} has {1} life points out of 3", character, character.Life);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Keep fighting!!");
+                                        continue;
+                                    }
                                 }
                                 else
                                 {
                                     Leszynski.FightS(battleMonster);
+                                    if (win == 3)
+                                    {
+                                        score++;
+                                        Console.WriteLine("Current Score: {0}", score);
+                                    }
+                                    else if (win == 1)
+                                    {
+
+                                        character.Life -= 1;
+                                        Console.WriteLine("{0} has {1} life points out of 3", character, character.Life);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Keep fighting!!");
+                                        continue;
+                                    }
                                 }
                                 break;
 
-                                //Pascal.FightR(character, battleMonster.Name);
+                            //Pascal.FightR(character, battleMonster.Name);
 
-                                
 
-                                //Score tallied
-                                
-                                //Game win/lose determined
-                                
+
+                            //Score tallied
+
+                            //Game win/lose determined
+
                             case ConsoleKey.D2:
                                 Console.WriteLine("Inside the second door you see a ferocious beast...");
                                 //Combat initiated here
@@ -290,61 +339,166 @@ namespace Dungeon
                                 if (character == player1)
                                 {
                                     Pascal.FightR(battleMonster);
+                                    if (win == 3)
+                                    {
+                                        score++;
+                                        Console.WriteLine("Current Score: {0}", score);
+                                    }
+                                    else if (win == 1)
+                                    {
+
+                                        character.Life -= 1;
+                                        Console.WriteLine("{0} has {1} life points out of 3", character, character.Life);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Keep fighting!!");
+                                        continue;
+                                    }
                                 }
                                 else if (character == player2)
                                 {
+
                                     JoeSmoke.FightP(battleMonster);
+                                    if (win == 3)
+                                    {
+                                        score++;
+                                        Console.WriteLine("Current Score: {0}", score);
+                                    }
+                                    else if (win == 1)
+                                    {
+
+                                        character.Life -= 1;
+                                        Console.WriteLine("{0} has {1} life points out of 3", character, character.Life);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Keep fighting!!");
+                                        continue;
+                                    }
+
                                 }
                                 else
                                 {
                                     Leszynski.FightS(battleMonster);
+                                    if (win == 3)
+                                    {
+                                        score++;
+                                        Console.WriteLine("Current Score: {0}", score);
+                                    }
+                                    else if (win == 1)
+                                    {
+
+                                        character.Life -= 1;
+                                        Console.WriteLine("{0} has {1} life points out of 3", character, character.Life);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Keep fighting!!");
+                                        continue;
+                                    }
                                 }
                                 break;
-                                //Score tallied
-                                //Game win/lose determined
-                                
+                            //Score tallied
+                            //Game win/lose determined
+
                             case ConsoleKey.D3:
                                 Console.WriteLine("Inside the third door you see a fiend unimaginable...");
                                 //Combat initiated here
                                 Console.WriteLine("You face: " + battleMonster.Name);
-
+                                
                                 if (character == player1)
                                 {
                                     Pascal.FightR(battleMonster);
+                                    if (win == 3)
+                                    {
+                                        score++;
+                                        Console.WriteLine("Current Score: {0}", score);
+                                    }
+                                    else if (win == 1)
+                                    {
+
+                                        character.Life -= 1;
+                                        Console.WriteLine("{0} has {1} life points out of 3", character, character.Life);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Keep fighting!!");
+                                        continue;
+                                    }
                                 }
                                 else if (character == player2)
                                 {
                                     JoeSmoke.FightP(battleMonster);
+                                    if (win == 3)
+                                    {
+                                        score++;
+                                        Console.WriteLine("Current Score: {0}", score);
+                                    }
+                                    else if (win == 1)
+                                    {
+
+                                        character.Life -= 1;
+                                        Console.WriteLine("{0} has {1} life points out of 3", character, character.Life);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Keep fighting!!");
+                                        continue;
+                                    }
                                 }
                                 else
                                 {
                                     Leszynski.FightS(battleMonster);
+                                    if (win == 3)
+                                    {
+                                        score++;
+                                        Console.WriteLine("Current Score: {0}", score);
+                                    }
+                                    else if (win == 1)
+                                    {
+
+                                        character.Life -= 1;
+                                        Console.WriteLine("{0} has {1} life points out of 3", character, character.Life);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Keep fighting!!");
+                                        continue;
+                                    }
                                 }
                                 break;
-                                //Score tallied
-                                //Game win/lose determined
-                                
+                            //Score tallied
+                            //Game win/lose determined
+
 
                             default:
                                 Console.WriteLine("That's not a door? What are you doing over there?");
                                 break;
                         }
-
+                        
                         //TODO Play again y/n added here
+                        Console.WriteLine("Game Over");
 
-                        break;
-
-
-
-
-                        //TODO - *** Jump Here ***
-                        //Rock paper Scissors mechanics will eventually apply bonuses depending on the hero/enemy chosen.
-                        //Normal mechanics can be applied after mvp is reached to go along with RPS mechanics.
-                        //Have the enemies randomly picked once door is chosen so the player can never memorize the doors.
-                        //Initiate combat, keep track of score, have menu option for character info, declare winner/loser
-                        //Player should be able to exit any time.
-
-
+                        Console.WriteLine("play again?\n\ntype \"yes\" or \"no\"");
+                        string playagain = Console.ReadLine().ToLower();
+                        if (playagain == "yes")
+                        {
+                            //Needs to restart game from the beginning.
+                            intro = false;
+                            exitGame = false;
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("New Game Reloaded\n\n");
+                            Console.ResetColor();
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("thanks for playing!");
+                            intro = true;
+                            exitGame = true;
+                            return;
+                        }
 
 
 

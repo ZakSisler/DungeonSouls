@@ -11,7 +11,7 @@ namespace Heroes_Library
     {
         //Fields
         //private bool isPaper;
-        private static Heroes heroName;
+        //private static Heroes heroName;
 
         //Properties
         public bool IsPaper { get; set; }
@@ -26,7 +26,7 @@ namespace Heroes_Library
         public JoeSmoke()
         {
             Name = "Joe Smoke";
-
+            Life = 3;
         }
 
         //Methods
@@ -35,28 +35,31 @@ namespace Heroes_Library
             return string.Format("Joe Smoke");
         }
 
-        public static void FightP(Monsters battleMonster)
+        public static int FightP(Monsters battleMonster)
         {
-            int score = 0;
-
+            int win = 1;
+            
             if (battleMonster.Name == "Sorceror Kahn Troll")
             {
                 //Paper vs. Paper type
                 Console.WriteLine("Draw!");
                 //Character flees; No damage taken, no score increased.
+                win = 2;
             }
             else if (battleMonster.Name == "Kafka Bug")
             {
                 //Paper vs Scissors type
-                Console.WriteLine("You take damage, but the enemy has been defeated!");
+                Console.WriteLine("You take damage, and the enemy has escaped!");
                 //Hero takes 1 damage to Life out of 3 MaxLife; If life = zero game over
+                win = 1;
             }
             else if (battleMonster.Name == "Small Baby")
             {
                 //Paper vs Rock
                 Console.WriteLine("You win!");
-                score++;
+                win = 3;
             }
+            return win;
         }
 
     }

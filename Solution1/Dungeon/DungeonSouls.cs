@@ -173,7 +173,7 @@ namespace Dungeon
                             Console.ResetColor();
                             exitGame = true;
                             intro = true;
-                            continue;
+                            continue;//possible break
 
                         //Game Exit
                         case ConsoleKey.X:
@@ -263,7 +263,7 @@ namespace Dungeon
 
                                 if (character == player1)
                                 {
-                                    Pascal.FightR(battleMonster);
+                                    Pascal.FightR(battleMonster, character);
                                     if (win == 3)
                                     {
                                         score++;
@@ -338,7 +338,7 @@ namespace Dungeon
 
                                 if (character == player1)
                                 {
-                                    Pascal.FightR(battleMonster);
+                                    Pascal.FightR(battleMonster, character);
                                     if (win == 3)
                                     {
                                         score++;
@@ -409,7 +409,7 @@ namespace Dungeon
                                 
                                 if (character == player1)
                                 {
-                                    Pascal.FightR(battleMonster);
+                                    Pascal.FightR(battleMonster, character);
                                     if (win == 3)
                                     {
                                         score++;
@@ -477,28 +477,7 @@ namespace Dungeon
                                 break;
                         }
                         
-                        //TODO Play again y/n added here
-                        Console.WriteLine("Game Over");
-
-                        Console.WriteLine("play again?\n\ntype \"yes\" or \"no\"");
-                        string playagain = Console.ReadLine().ToLower();
-                        if (playagain == "yes")
-                        {
-                            //Needs to restart game from the beginning.
-                            intro = false;
-                            exitGame = false;
-                            Console.ForegroundColor = ConsoleColor.Green;
-                            Console.WriteLine("New Game Reloaded\n\n");
-                            Console.ResetColor();
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("thanks for playing!");
-                            intro = true;
-                            exitGame = true;
-                            return;
-                        }
+                        
 
 
 
@@ -506,6 +485,29 @@ namespace Dungeon
                     break;
 
                 } while (!intro && !exitGame);
+
+                //TODO Play again y/n added here
+                Console.WriteLine("Game Over");
+
+                Console.WriteLine("play again?\n\ntype \"yes\" or \"no\"");
+                string playagainFinal = Console.ReadLine().ToLower();
+                if (playagainFinal == "yes")
+                {
+                    //Needs to restart game from the beginning.
+                    intro = false;
+                    exitGame = false;
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("New Game Reloaded\n\n");
+                    Console.ResetColor();
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("thanks for playing!");
+                    intro = true;
+                    exitGame = true;
+                    return;
+                }
 
             } while (!exitGame);
 

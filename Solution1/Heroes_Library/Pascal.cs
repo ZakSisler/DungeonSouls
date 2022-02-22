@@ -34,6 +34,8 @@ namespace Heroes_Library
         {
             Name = "Blaise Pascal";
             Life = 3;
+            Score = 0;
+            Type = Dungeon_Library.Type.Rock;
         }
 
         //Methods
@@ -42,7 +44,7 @@ namespace Heroes_Library
             return string.Format("Blaise Pascal");
         }
 
-        public static int FightR(Monsters battleMonster)
+        public static int FightR(Monsters battleMonster, Heroes pascal)
         {
             int win = 1;
             
@@ -52,7 +54,7 @@ namespace Heroes_Library
                 //Rock vs. Rock type
                 Console.WriteLine("Draw!");
                 //Character flees; No damage taken, no score increased.
-                win = 2;
+                //win = 2;
             }
             else if (battleMonster.Name == "Sorceror Kahn Troll")
             {
@@ -66,7 +68,9 @@ namespace Heroes_Library
             {
                 //Rock vs Scissors type
                 Console.WriteLine("You win!");
-                win = 3;
+                pascal.Score += 1;
+                
+                //win = 3;
             }
             return win;
 

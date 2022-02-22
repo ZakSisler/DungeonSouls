@@ -23,6 +23,8 @@ namespace Dungeon_Library
 
 
         //Properties
+        public int Score { get; set; }
+        public Type Type { get; set; }
 
         //public int MaxDamage { get; set; }
         //public Heroes HeroName { get; set; }
@@ -39,8 +41,8 @@ namespace Dungeon_Library
                 }
                 else
                 {
-                    Console.WriteLine("Game Over.");
-
+                    _life = 0;
+                    //Console.WriteLine("Game Over.");
                 }
             }
         }

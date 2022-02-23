@@ -46,7 +46,7 @@ namespace Heroes_Library
 
         public static int FightR(Monsters battleMonster, Heroes pascal)
         {
-            int win = 1;
+            int win = 0;
             
 
             if (battleMonster.Name == "Small Baby")
@@ -54,7 +54,7 @@ namespace Heroes_Library
                 //Rock vs. Rock type
                 Console.WriteLine("Draw!");
                 //Character flees; No damage taken, no score increased.
-                //win = 2;
+                win = 2;
             }
             else if (battleMonster.Name == "Sorceror Kahn Troll")
             {
@@ -70,7 +70,7 @@ namespace Heroes_Library
                 Console.WriteLine("You win!");
                 pascal.Score += 1;
                 
-                //win = 3;
+                win = 3;
             }
             return win;
 

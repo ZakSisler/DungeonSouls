@@ -27,6 +27,8 @@ namespace Heroes_Library
         {
             Name = "Joe Smoke";
             Life = 3;
+            Score = 0;
+            Type = Dungeon_Library.Type.Paper;
         }
 
         //Methods
@@ -35,7 +37,7 @@ namespace Heroes_Library
             return string.Format("Joe Smoke");
         }
 
-        public static int FightP(Monsters battleMonster)
+        public static int FightP(Monsters battleMonster, Heroes joeSmoke)
         {
             int win = 1;
             

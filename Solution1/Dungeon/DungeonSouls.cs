@@ -192,12 +192,13 @@ namespace Dungeon
                     }
 
 
-                    ////////////////////////////Actual Game begins//////////////////////////////////////////////////////////////////////////
+                /////////Actual Game Begins//////////////////////////////////////////////////////////////////////////
+                
+                    Heroes character = new Heroes();
                     while (doorOneOpened)
                     {
-                        Console.WriteLine("You found a door! you slowly open it.\n\nYou now find yourself in a room with a large hole in the wall with wreckage and debris strewn about. \n" +
-                            "before you can get your wits about you a purple parrot haphazardly flies by squawking loudly and obnoxiously" +
-                            "\n\nParrot: WHO ARE YOU?!\n\n");
+                        Console.WriteLine("\n Before we continue..." +
+                            "\nPICK YOUR FIGHTER!!\n\n");
 
                         Console.Write("\nPlease choose an character:\n" +
                         "B) Blaise Pascal (Rock Type)\n" +
@@ -210,7 +211,6 @@ namespace Dungeon
                         //Clear Console
                         Console.Clear();
                         //string character = "";
-                        Heroes character = new Heroes();
                         switch (charChoice)
                         {
                             case ConsoleKey.B:
@@ -235,9 +235,9 @@ namespace Dungeon
                         }
 
                         Console.WriteLine("Well, {0}, you wanna get outta here?", character.Name);//solve this name issue
-                        Console.WriteLine("Before you can answer, the parrot flies out of the room, through the hole in the wall. You see a swarm of bloodthirsty rats behind you and quickly decide to follow the bird. \n\nBefore you there are three doors with colors you've never layed eyes on, their beauty unparalleled. \n\nParrot: ARE YOU GONNA LOOK AT THEM ALL DAY OR WHAT? Pick a door and let's get outta here!!");
+                       
 
-                        Console.Write("\nPlease choose a door by entering the appropriate number below:\n" +
+                        Console.Write("\nPICK THE DOOR TO INITIATE COMBAT: (1, 2, or 3?):\n" +
                        "1) The oaky, light salmon colored door\n" +//color code it?
                        "2) The bright, lemon chiffon colored door\n" +
                        "3) The dilapidated, magenta and cyan colored door\n");
@@ -251,7 +251,7 @@ namespace Dungeon
                         //Score declared and initialized.
                         //int score = 0;
 
-                                    int win = 1;
+                        int win = 1;
                         switch (charDoor)
                         {
                             //TODO fix this switch for door selection / monster randomization
@@ -264,7 +264,7 @@ namespace Dungeon
                                 if (character == player1)
                                 {
                                     Pascal.FightR(battleMonster, character);
-                                    if (win == 3)
+                                    if (battleMonster.Name == "Small Baby")
                                     {
                                         score++;
                                         Console.WriteLine("Current Score: {0}", score);
@@ -273,7 +273,7 @@ namespace Dungeon
                                     {
 
                                         character.Life -= 1;
-                                        Console.WriteLine("{0} has {1} life points out of 3", character, character.Life);
+                                        Console.WriteLine("You have {0} life points out of 3", character.Life);
                                     }
                                     else
                                     {
@@ -283,7 +283,7 @@ namespace Dungeon
                                 }
                                 else if (character == player2)
                                 {
-                                    JoeSmoke.FightP(battleMonster);
+                                    JoeSmoke.FightP(battleMonster, character);
                                     if (win == 3)
                                     {
                                         score++;
@@ -293,7 +293,7 @@ namespace Dungeon
                                     {
 
                                         character.Life -= 1;
-                                        Console.WriteLine("{0} has {1} life points out of 3", character, character.Life);
+                                        Console.WriteLine("You have {0} life points out of 3", character.Life);
                                     }
                                     else
                                     {
@@ -303,7 +303,7 @@ namespace Dungeon
                                 }
                                 else
                                 {
-                                    Leszynski.FightS(battleMonster);
+                                    Leszynski.FightS(battleMonster, character);
                                     if (win == 3)
                                     {
                                         score++;
@@ -313,7 +313,7 @@ namespace Dungeon
                                     {
 
                                         character.Life -= 1;
-                                        Console.WriteLine("{0} has {1} life points out of 3", character, character.Life);
+                                        Console.WriteLine("You have {0} life points out of 3", character, character.Life);
                                     }
                                     else
                                     {
@@ -348,7 +348,7 @@ namespace Dungeon
                                     {
 
                                         character.Life -= 1;
-                                        Console.WriteLine("{0} has {1} life points out of 3", character, character.Life);
+                                        Console.WriteLine("You have {0} life points out of 3", character.Life);
                                     }
                                     else
                                     {
@@ -359,7 +359,7 @@ namespace Dungeon
                                 else if (character == player2)
                                 {
 
-                                    JoeSmoke.FightP(battleMonster);
+                                    JoeSmoke.FightP(battleMonster, character);
                                     if (win == 3)
                                     {
                                         score++;
@@ -369,7 +369,7 @@ namespace Dungeon
                                     {
 
                                         character.Life -= 1;
-                                        Console.WriteLine("{0} has {1} life points out of 3", character, character.Life);
+                                        Console.WriteLine("You have {0} life points out of 3", character.Life);
                                     }
                                     else
                                     {
@@ -380,7 +380,7 @@ namespace Dungeon
                                 }
                                 else
                                 {
-                                    Leszynski.FightS(battleMonster);
+                                    Leszynski.FightS(battleMonster, character);
                                     if (win == 3)
                                     {
                                         score++;
@@ -390,7 +390,7 @@ namespace Dungeon
                                     {
 
                                         character.Life -= 1;
-                                        Console.WriteLine("{0} has {1} life points out of 3", character, character.Life);
+                                        Console.WriteLine("You have life {0 }points out of 3", character.Life);
                                     }
                                     else
                                     {
@@ -406,7 +406,7 @@ namespace Dungeon
                                 Console.WriteLine("Inside the third door you see a fiend unimaginable...");
                                 //Combat initiated here
                                 Console.WriteLine("You face: " + battleMonster.Name);
-                                
+
                                 if (character == player1)
                                 {
                                     Pascal.FightR(battleMonster, character);
@@ -419,7 +419,7 @@ namespace Dungeon
                                     {
 
                                         character.Life -= 1;
-                                        Console.WriteLine("{0} has {1} life points out of 3", character, character.Life);
+                                        Console.WriteLine("You have {0} life points out of 3", character.Life);
                                     }
                                     else
                                     {
@@ -429,7 +429,7 @@ namespace Dungeon
                                 }
                                 else if (character == player2)
                                 {
-                                    JoeSmoke.FightP(battleMonster);
+                                    JoeSmoke.FightP(battleMonster, character);
                                     if (win == 3)
                                     {
                                         score++;
@@ -449,7 +449,7 @@ namespace Dungeon
                                 }
                                 else
                                 {
-                                    Leszynski.FightS(battleMonster);
+                                    Leszynski.FightS(battleMonster, character);
                                     if (win == 3)
                                     {
                                         score++;
@@ -476,18 +476,26 @@ namespace Dungeon
                                 Console.WriteLine("That's not a door? What are you doing over there?");
                                 break;
                         }
-                        
-                        
 
 
+
+
+                        if (character.Life <= 0)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("GAME OVER. YOU DIED.");
+                            //exitGame = true;
+                            intro = true;
+                            doorOneOpened = false;
+                        }
 
                     }
-                    break;
+                    //break;
 
                 } while (!intro && !exitGame);
 
                 //TODO Play again y/n added here
-                Console.WriteLine("Game Over");
+                //Console.WriteLine("Game Over");
 
                 Console.WriteLine("play again?\n\ntype \"yes\" or \"no\"");
                 string playagainFinal = Console.ReadLine().ToLower();
@@ -499,7 +507,7 @@ namespace Dungeon
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("New Game Reloaded\n\n");
                     Console.ResetColor();
-                    break;
+                    //break;
                 }
                 else
                 {

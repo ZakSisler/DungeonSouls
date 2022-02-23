@@ -27,6 +27,8 @@ namespace Heroes_Library
         {
             Name = "Leszynski the Hungarian";
             Life = 3;
+            Score = 0;
+            Type = Dungeon_Library.Type.Scissors;
         }
 
 
@@ -36,7 +38,7 @@ namespace Heroes_Library
             return string.Format("Leszynski the Hungarian");
         }
 
-        public static int FightS(Monsters battleMonster)
+        public static int FightS(Monsters battleMonster, Heroes leszynski)
         {
             int win = 1;
 

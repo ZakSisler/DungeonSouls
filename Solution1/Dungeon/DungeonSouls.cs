@@ -203,7 +203,10 @@ namespace Dungeon
                         Console.Write("\nPlease choose an character:\n" +
                         "B) Blaise Pascal (Rock Type)\n" +
                         "J) Joe Smoke (Paper Type)\n" +
-                        "L) Leszynski the Hungarian (Scissors Type)\n");
+                        "L) Leszynski the Hungarian (Scissors Type)\n" +
+                        "" +
+                        "See Info: \n" +
+                        "P)Player Life/Score\n");
 
                         ConsoleKey charChoice = Console.ReadKey(true).Key;
                         //Executes on input without having to hit "Enter"
@@ -227,6 +230,13 @@ namespace Dungeon
                                 character = player3;
                                 Console.WriteLine("{0}, eh ? ", character);
                                 //IsScissors = true;
+                                break;
+                            case ConsoleKey.S:
+                                Console.WriteLine(score);
+                                break;
+                            case ConsoleKey.P:
+                                Console.WriteLine(character.Life);
+                                Console.WriteLine(character.Score);
                                 break;
 
                             default:

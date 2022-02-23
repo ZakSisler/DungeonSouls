@@ -391,7 +391,7 @@ namespace Dungeon
                                     {
 
                                         character.Life -= 1;
-                                        Console.WriteLine("You have life {0 }points out of 3", character.Life);
+                                        Console.WriteLine("You have {0} life points out of 3", character.Life);
                                     }
                                     else
                                     {
@@ -440,7 +440,7 @@ namespace Dungeon
                                     {
 
                                         character.Life -= 1;
-                                        Console.WriteLine("{0} has {1} life points out of 3", character, character.Life);
+                                        Console.WriteLine("You have {0} life points out of 3", character.Life);
                                     }
                                     else
                                     {
@@ -460,7 +460,7 @@ namespace Dungeon
                                     {
 
                                         character.Life -= 1;
-                                        Console.WriteLine("{0} has {1} life points out of 3", character, character.Life);
+                                        Console.WriteLine("You have {0} life points out of 3", character.Life);
                                     }
                                     else
                                     {

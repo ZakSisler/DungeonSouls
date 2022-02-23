@@ -192,21 +192,18 @@ namespace Dungeon
                     }
 
 
-                /////////Actual Game Begins//////////////////////////////////////////////////////////////////////////
-                
+                    /////////Actual Game Begins//////////////////////////////////////////////////////////////////////////
+
                     Heroes character = new Heroes();
                     while (doorOneOpened)
                     {
                         Console.WriteLine("\n Before we continue..." +
                             "\nPICK YOUR FIGHTER!!\n\n");
 
-                        Console.Write("\nPlease choose an character:\n" +
+                        Console.Write("\nPlease choose a character:\n" +
                         "B) Blaise Pascal (Rock Type)\n" +
                         "J) Joe Smoke (Paper Type)\n" +
-                        "L) Leszynski the Hungarian (Scissors Type)\n" +
-                        "" +
-                        "See Info: \n" +
-                        "P)Player Life/Score\n");
+                        "L) Leszynski the Hungarian (Scissors Type)\n");//todo fix score
 
                         ConsoleKey charChoice = Console.ReadKey(true).Key;
                         //Executes on input without having to hit "Enter"
@@ -231,13 +228,6 @@ namespace Dungeon
                                 Console.WriteLine("{0}, eh ? ", character);
                                 //IsScissors = true;
                                 break;
-                            case ConsoleKey.S:
-                                Console.WriteLine(score);
-                                break;
-                            case ConsoleKey.P:
-                                Console.WriteLine(character.Life);
-                                Console.WriteLine(character.Score);
-                                break;
 
                             default:
                                 Console.WriteLine("Huh?");
@@ -245,12 +235,13 @@ namespace Dungeon
                         }
 
                         Console.WriteLine("Well, {0}, you wanna get outta here?", character.Name);//solve this name issue
-                       
+
 
                         Console.Write("\nPICK THE DOOR TO INITIATE COMBAT: (1, 2, or 3?):\n" +
                        "1) The oaky, light salmon colored door\n" +//color code it?
                        "2) The bright, lemon chiffon colored door\n" +
-                       "3) The dilapidated, magenta and cyan colored door\n");
+                       "3) The dilapidated, magenta and cyan colored door\n" +
+                       "\n\nP) Character Info (Life/Score)");
 
                         ConsoleKey charDoor = Console.ReadKey(true).Key;
                         //Executes on input without having to hit "Enter"
@@ -480,6 +471,11 @@ namespace Dungeon
                                 break;
                             //Score tallied
                             //Game win/lose determined
+                            case ConsoleKey.P:
+                                //possible if tree for pascal/joe/les score
+                                Console.WriteLine("Life: " + character.Life);
+                                Console.WriteLine("Score: " + character.Score);
+                                break;
 
 
                             default:
@@ -494,6 +490,7 @@ namespace Dungeon
                         {
                             Console.Clear();
                             Console.WriteLine("GAME OVER. YOU DIED.");
+                            Console.WriteLine("Score: " + score);
                             //exitGame = true;
                             intro = true;
                             doorOneOpened = false;

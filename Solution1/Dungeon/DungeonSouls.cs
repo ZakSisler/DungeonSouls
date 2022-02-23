@@ -234,14 +234,14 @@ namespace Dungeon
                                 break;
                         }
 
-                        Console.WriteLine("Well, {0}, you wanna get outta here?", character.Name);//solve this name issue
+                        Console.WriteLine("Well, you wanna get outta here? You'll have to fight what's behind these doors...");
 
 
                         Console.Write("\nPICK THE DOOR TO INITIATE COMBAT: (1, 2, or 3?):\n" +
                        "1) The oaky, light salmon colored door\n" +//color code it?
                        "2) The bright, lemon chiffon colored door\n" +
                        "3) The dilapidated, magenta and cyan colored door\n" +
-                       "\n\nP) Character Info (Life/Score)");
+                       "\n\nP) Check Character Info (Life/Score)");
 
                         ConsoleKey charDoor = Console.ReadKey(true).Key;
                         //Executes on input without having to hit "Enter"
